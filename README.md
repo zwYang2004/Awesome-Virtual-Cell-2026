@@ -92,6 +92,13 @@ All works are organized into **5 core research pillars**, with papers inside eac
 - [4. Benchmarks & Large-Scale Atlases (`DB`)](#4-benchmarks--large-scale-atlases-db)
 - [5. Therapeutics, RNA/Protein Design & AI Agents (`TX`)](#5-therapeutics-rnaprotein-design--ai-agents-tx)
 - [6. Arc 2026 Virtual Cell Challenge: Top-7 Takeaways](#6-arc-2026-virtual-cell-challenge-top-7-takeaways)
+- [7. 📊 Benchmark & Atlas Datasets Registry](#7--benchmark--atlas-datasets-registry)
+  - [7.1 Single-Cell Genetic Perturbations (CRISPR / Perturb-seq)](#71-single-cell-genetic-perturbations-crispr--perturb-seq)
+  - [7.2 Chemical & Small-Molecule Perturbations (High-Throughput Screens)](#72-chemical--small-molecule-perturbations-high-throughput-screens)
+  - [7.3 Spatiotemporal Single-Cell Dynamics (Spatial Omics)](#73-spatiotemporal-single-cell-dynamics-spatial-omics)
+  - [7.4 Massive Observational Atlases & Lineage Tracing](#74-massive-observational-atlases--lineage-tracing)
+  - [7.5 Genomics & Metagenomic Sequence Corpora](#75-genomics--metagenomic-sequence-corpora)
+- [8. Standardized Benchmark Suites & APIs](#8-standardized-benchmark-suites--apis)
 
 ---
 
@@ -125,12 +132,14 @@ All works are organized into **5 core research pillars**, with papers inside eac
 
 | Year | Method / Title | Venue | Authors / Affiliations | Core Idea | Link / DOI |
 | :---: | :--- | :--- | :--- | :--- | :--- |
+| **2026** | **UniPert-G2CP**: Bridges genetic & chemical screens from molecular representation to phenotype modeling | *Cell* 189 | Li, Zeng, ..., **Fan Yang, Min Li, Jianhua Yao** (Tencent / CSU) | Unified cause-effect space; genetic-to-chemical transfer (G2CP) boosting in silico drug screening & resistance | [DOI](https://doi.org/10.1016/j.cell.2026.04.032) |
 | **2026** | **ProteinTalks**: An operational perturbation proteomics-based virtual cell model | *Nature* | **Guo** (Westlake Univ.) | Perturbation proteomics-driven virtual cell using Neural ODEs | [Nature](https://doi.org/10.1038/s41586-026-11001-9) |
 | **2026** | **STATE**: Predicting cellular responses to perturbation across diverse contexts | *Cell* / *NeurIPS Spotlight* | **CZ Biohub** | Transformer trained on 100M+ perturbed cells & 167M observational cells | [DOI](https://doi.org/10.1016/j.cell.2026.07.052) |
 | **2026** | **X-Cell**: Scaling Causal Perturbation Prediction via Diffusion Language Models | bioRxiv | Wang, **Bo Wang** (Xaira / Stanford) | Masked diffusion LLM trained on 37M+ cells (Arc Challenge 3rd place backbone) | [bioRxiv](https://www.biorxiv.org/content/10.64898/2026.03.18.712807) |
 | **2026** | **RNA Fingerprinting**: Searching perturbation dictionaries with RNA fingerprints | *Cell* / *Nat. Biotechnol.* | - | Compact RNA fingerprints for fast retrieval across perturbation dictionaries | *Cell* 2026 |
 | **2026** | **iGOF-Perturb-seq**: Mapping TF functions in astrocytes | *Science* 392 | Zhang et al. | *In vivo* gain-of-function Perturb-seq for astrocyte transcription factors | *Science* |
 | **2025** | **CONCERT**: Generative modeling of spatially resolved perturbation responses | bioRxiv | **Zitnik** (Harvard) | Niche-aware generative modeling for spatial transcriptomics perturbation | [bioRxiv](https://www.biorxiv.org/content/10.1101/2025.11.08.686890) |
+| **2025** | **Perturbation-Aware Representation Learning for In Vivo Genetic Screens** | bioRxiv | Hugi, Tanna, Platt, **Gunnar Rätsch** (ETH Zurich) | Non-negative negative-unlabeled (nnNU) risk + monotonic guide abundance prior for true perturbation pseudo-posterior | [bioRxiv](https://doi.org/10.1101/2025.10.15.682661) |
 
 ### 1.3 Lab-in-the-Loop & Inverse Cell Fate Design (Sorted by Year)
 
@@ -205,6 +214,7 @@ All works are organized into **5 core research pillars**, with papers inside eac
 | **2026** | **Deep learning perturbation models can outperform baselines on calibrated metrics** | *Nat. Biotechnol.* | Introduces DRF calibration; refutes linear-only claims (Miller, **Bo Wang**, Camillo) | [DOI](https://doi.org/10.1038/s41587-026-03307-w) |
 | **2026** | **Virtual Cell Challenge 2026**: Benchmarking zero-shot generalization | *Cell* | Arc Institute commentary on 2026 challenge & cross-context generalization | *Cell* 2026 |
 | **2026** | **A systematic comparison of single-cell perturbation response prediction** | *Sci. Adv.* 12 | Comprehensive comparison across genetic & chemical perturbation tasks | [DOI](https://doi.org/10.1126/sciadv.aed3414) |
+| **2026** | **Interrogation of noncoding schizophrenia risk variants using CRISPR functional genomics** | bioRxiv | Hamilton, Sullivan, **Gersbach, Crawford** (Duke / UNC) | CRISPRi + HCR-FlowFISH + Prime Editing screening 333 noncoding regulatory elements | [bioRxiv](https://doi.org/10.64898/2026.09.03.749158) |
 | **2026** | **Benchmarking algorithms for generalizable single-cell perturbation prediction** | *Nat. Methods* 23 | Systematic evaluation of generalizable perturbation prediction algorithms | [DOI](https://doi.org/10.1038/s41592-025-02980-0) |
 | **2026** | **scArchon**: A scalable benchmarking framework for assessing single-cell perturbation models | *Genome Biol.* 27 | Standardized multi-sample evaluation across 9 chemical/bacterial perturbation tools (Radig et al.) | [DOI](https://doi.org/10.1186/s13059-026-04104-x) |
 | **2026** | **Tahoe-100M** | *Cell* 189 | 100-million-cell drug-induced single-cell phenotype atlas | *Cell* 189 |
@@ -221,6 +231,7 @@ All works are organized into **5 core research pillars**, with papers inside eac
 | :---: | :--- | :--- | :--- | :--- | :--- |
 | **2027** | **SoupFold**: Co-folding with a Soup of Representations | *ICLR* (Full Score) | KAIST | Fuses frozen pair representations from AF3, Protenix, ESMFold2, OpenDDE | [OpenReview](https://openreview.net/forum?id=Jn7WiQ9LtS) |
 | **2026** | **RhoAgent & RDiff**: Programmable functional RNA design with a virtual scientist | *Nat. Biotechnol.* | Huang, Zhang, **Kwok, Collins, Yu Li** | LLM virtual scientist + 2-stage cascaded diffusion (RDiff) for 3D RNA design | [DOI](https://doi.org/10.1038/s41587-026-03362-3) |
+| **2026** | **DiscoveryAgent**: A Framework for Scientist-centric Agentic AI | arXiv | Queen, Dann, Pritchard, **James Zou** (Stanford) | Scientist-directed hypothesis steering + autonomous audit agents catching errors & discovering CD4+ T-cell relay genes | [arXiv:2611.21950](https://arxiv.org/abs/2611.21950) |
 | **2026** | **The Virtual Biotech**: Multi-agent AI framework for therapeutic discovery | *Science* | **James Zou** (Stanford / UW) | Corporate-structured multi-agent AI system (CSO, Biology, Pharmacology, Clinical) | *Science* |
 | **2026** | **CLADD**: RAG-Enhanced Collaborative LLM Agents for Drug Discovery | *AAAI* | KAIST & **Genentech** | Zero-finetuning RAG + Planning/KG/Molecular agent teams | [GitHub](https://github.com/Genentech/CLADD) |
 | **2026** | **Medea**: An AI agent for therapeutic reasoning across biological contexts | bioRxiv | **Zitnik** (Harvard) | Omics AI agent for cross-context therapeutic reasoning | [bioRxiv](https://www.biorxiv.org/content/10.64898/2026.01.16.696667) |
