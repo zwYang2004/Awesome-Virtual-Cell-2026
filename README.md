@@ -178,6 +178,7 @@ All works are organized into **5 core research pillars**, with papers inside eac
   - [7.4 Massive Observational Atlases & Lineage Tracing](#74-massive-observational-atlases--lineage-tracing)
   - [7.5 Genomics & Metagenomic Sequence Corpora](#75-genomics--metagenomic-sequence-corpora)
 - [8. Standardized Benchmark Suites & APIs](#8-standardized-benchmark-suites--apis)
+- [9. Reviews & Surveys](#9-reviews--surveys)
 - [📌 Citation](#-citation)
 - [📜 License & Academic Attribution](#-license--academic-attribution)
 
@@ -193,6 +194,9 @@ All works are organized into **5 core research pillars**, with papers inside eac
 | **2026** | `OT` | **SCALE**: Scalable Conditional Endpoint Transport | bioRxiv | Atlas-scale scRNA-seq, CELLxGENE | Scalable conditional endpoint transport for atlas-level virtual cell perturbation | [DOI](https://doi.org/10.64898/2026.03.17.712536) |
 | **2026** | `Diff` | **PerturbDiff**: Functional Diffusion | *NeurIPS* / arXiv | Norman 2019, Adamson 2016 | Functional diffusion in Hilbert space (RKHS) capturing transcriptional escapers | [arXiv:2602.19685](https://arxiv.org/abs/2602.19685) |
 | **2026** | `SB` | **Benchmark for Discrete Schrödinger Bridges** | *ICLR* | Discrete biological graphs & sequences | Evaluates discrete Schrödinger bridges (`DLightSB`) on discrete sequence/graph spaces | OpenReview |
+| **2026** | `FM` | **Flux Matching**: Non-conservative generative vector fields | arXiv | Synthetic & biological dynamical systems | Learns non-conservative generative vector fields for directed, asymmetric regulatory dynamics | [arXiv:2605.07319](https://arxiv.org/abs/2605.07319) |
+| **2026** | `Diff` | **Count Bridges**: Count-based transcriptomic bridges | *ICLR* | Single-cell count matrices | Diffusion-style generative bridge defined directly on non-negative integer count space | OpenReview |
+| **2026** | `Diff` | **CountsDiff**: Diffusion on natural numbers | arXiv | Single-cell count generation & imputation | Native count-space diffusion model avoiding continuous normalization artifacts | [arXiv:2604.03779](https://arxiv.org/abs/2604.03779) |
 | **2025** | `FM` | **CellFlow**: Flow matching phenotype model | *Nat. Methods* / bioRxiv | Sci-Plex 3, LARRY barcoded hematopoiesis | Continuous flow matching for high-dimensional perturbation distribution mapping | [bioRxiv](https://www.biorxiv.org/content/10.1101/2025.04.11.648220) |
 | **2025** | `SB` | **BranchSBM**: Branched Schrödinger Bridge Matching | *ICLR* | Hematopoietic lineage bifurcation trees, Paul 2015 | Extends Schrödinger bridge to tree-like bifurcations (cell fate decision trees) | [OpenReview](https://openreview.net/) |
 | **2025** | `FM` | **SP-FM**: Shortest-Path Flow Matching | *ICLR* | Norman 2019, scPerturb OOD splits | Conditional shortest-path base distributions on manifolds for OOD perturbation generalization | OpenReview |
@@ -217,6 +221,7 @@ All works are organized into **5 core research pillars**, with papers inside eac
 | **2026** | **ProteinTalks**: Perturbation proteomics virtual cell | *Nature* | In-house high-throughput perturbation proteomics (Westlake, 35k conditions) | Perturbation proteomics-driven virtual cell using Neural ODEs | [Nature](https://doi.org/10.1038/s41586-026-11001-9) |
 | **2026** | **STATE**: Predicting cellular responses to perturbation | *Cell* / *NeurIPS Spotlight* | Replogle 2022 GWPS (2.5M cells), Tahoe-100M, CELLxGENE | Transformer trained on 100M+ perturbed cells & 167M observational cells | [DOI](https://doi.org/10.1016/j.cell.2026.07.052) |
 | **2026** | **X-Cell**: Causal Perturbation via Diffusion LLMs | bioRxiv | Arc Virtual Cell Challenge 2026, Replogle GWPS (37M cells) | Masked diffusion LLM trained on 37M+ cells (Arc Challenge 3rd place backbone) | [bioRxiv](https://www.biorxiv.org/content/10.64898/2026.03.18.712807) |
+| **2026** | **PerturbGen**: Trajectory-aware perturbation modeling | bioRxiv | Immune, hematopoiesis & skin organoid trajectories | Predicts how interventions propagate along cellular trajectories, validated in skin organoids | bioRxiv |
 | **2026** | **RNA Fingerprinting**: Searching perturbation dictionaries | *Cell* / *Nat. Biotechnol.* | Broad CMAP / L1000, 10x Perturb-seq dictionaries | Compact RNA fingerprints for fast retrieval across perturbation dictionaries | *Cell* 2026 |
 | **2026** | **iGOF-Perturb-seq**: Mapping TF functions in astrocytes | *Science* 392 | Mouse *in vivo* AAV-mediated astrocyte Perturb-seq | *In vivo* gain-of-function Perturb-seq for astrocyte transcription factors | *Science* |
 | **2025** | **CONCERT**: Spatially resolved perturbation responses | bioRxiv | 10x Visium, MERFISH niche perturbation | Niche-aware generative modeling for spatial transcriptomics perturbation | [bioRxiv](https://www.biorxiv.org/content/10.1101/2025.11.08.686890) |
@@ -242,6 +247,13 @@ All works are organized into **5 core research pillars**, with papers inside eac
 | **2026** | **TranscriptFormer**: Generative cell atlas | *Science* 393 | Cross-species evolutionary single-cell atlas (1.5B years) | Generative cross-species single-cell foundation model modeling ancestral states | *Science* |
 | **2026** | **HyperST**: Hyperbolic Spatial Learning | *CVPR* | 10x Visium paired H&E histology + spatial transcriptomics | Hyperbolic hierarchical image-gene alignment for spatial transcriptomics prediction | CVPR 2026 |
 | **2026** | **scKITE**: Knowledge-enhanced scFM | arXiv | DoRothEA / SCENIC regulon networks, PBMC scRNA-seq | Knowledge-enhanced scFM with explicit gene regulatory network supervision | arXiv |
+| **2026** | **MaxToki**: Temporal AI for aging trajectories | bioRxiv | Human aging trajectories (in vitro & mouse) | Mixed discrete-continuous loss modeling ordered cell-state trajectories & pro-aging drivers | bioRxiv |
+| **2026** | **HoloCell**: Gene-anchored holistic scFM | bioRxiv | Paired scRNA-seq, scATAC-seq & proteomics | Unified gene-anchored hierarchical tokenization across multi-omic modalities | bioRxiv |
+| **2026** | **SIGnature**: Interpreting frozen scFMs | *Nature Biotechnology* | Large-scale single-cell atlases | XAI attribution on frozen scFMs deriving gene-importance scores & weakly expressed regulators | *Nature Biotechnology* |
+| **2025** | **PULSAR**: Multi-scale & multicellular scFM | bioRxiv | Donor-level single-cell cohorts | Hierarchical molecular-cellular-donor encoder for disease classification & cytokine simulation | bioRxiv |
+| **2025** | **scPRINT-2**: Next-gen scFM & modular ablation | bioRxiv | 50M+ cells, multi-cell GNN context | GNN-based intercellular encoder + 12-component modular evaluation of design choices | bioRxiv |
+| **2025** | **CellHermes**: LLM-unified multimodal omics | bioRxiv | Transcriptomics + PPI graphs + text | Reformulates omics profiles & PPI networks into QA templates for unified LLM reasoning | bioRxiv |
+| **2025** | **C2S-Scale**: Scaling LLMs for single-cell analysis | bioRxiv | Multi-cell QA & dual-context drug screens | Instruction-tuned + RL-aligned Cell2Sentence LLM nominating wet-lab validated enhancers | bioRxiv |
 | **2025** | **Nicheformer**: Spatial single-cell FM | *Nat. Methods* | SpatialCorpus-110M (110M cells across 73 spatial datasets) | Trained on SpatialCorpus-110M; projects dissociated scRNA-seq to spatial niches | [DOI](https://doi.org/10.1038/s41592-025-02814-z) |
 | **2024** | **Reference Mapping for Single-Cell Analysis** | *Cell* 187 | Human Cell Atlas (HCA), Azimuth reference panels | Foundational framework for rapid automated cell typing, projection & multi-atlas integration | [DOI](https://doi.org/10.1016/j.cell.2024.03.015) |
 
@@ -268,6 +280,9 @@ All works are organized into **5 core research pillars**, with papers inside eac
 | **2026** | **World models for biomedicine** | *Cell* 189 | Cross-scale multimodal biological graphs | Systematic formalization of biomedical world models, causal bounds & verification | *Cell* 189 |
 | **2026** | **Fifteen challenges for generative AI in cell biology** | *Cell* 189 | Cellular networks & interactome biology | 15 grand challenges defining generative cell biology from mechanistic fidelity to perturbation | *Cell* 189 |
 | **2026** | **Changing minds: How AI is transforming the life sciences** | *Cell* 189 | High-content imaging & functional omics | 8 leading scholars' perspectives on foundation models & empirical biology | *Cell* 189 |
+| **2026** | **Chreode: A Cell World Model for One-Step Temporal Dynamics and Perturbation Prediction** | arXiv | Developmental & perturbational trajectories | Action-conditioned one-step latent transition world model for cell-state dynamics | [arXiv:2605.28111](https://arxiv.org/abs/2605.28111) |
+| **2026** | **Cell-JEPA: Latent Representation Learning for Single-Cell Transcriptomics** | arXiv | Masked gene-expression views | Student-teacher JEPA predicting cell-level embeddings for dropout-robust representations | [arXiv:2602.02093](https://arxiv.org/abs/2602.02093) |
+| **2025** | **GeneJepa: A Predictive World Model of the Transcriptome** | bioRxiv | Transcriptomic & perturbation atlases | Joint-Embedding Predictive Architecture (JEPA) with VICReg regularization in latent space | bioRxiv |
 | **2026** | **VCLMU**: Mechanism-Centric Virtual Cell World Modeling | *NeurIPS* / arXiv | MSigDB hallmark pathways, Norman 2019 | Latent Mechanism Units (LMUs) embedding prior causal pathways into world models | [arXiv:2610.04475](https://arxiv.org/abs/2610.04475) |
 
 ### 3.2 Multimodal Disentanglement & Cell-Cell Communication
@@ -359,6 +374,7 @@ A curated registry of foundational benchmarks, perturbation datasets, spatiotemp
 | **Adamson 2016** | Perturb-seq (scRNA-seq) | **66,000+** cells | **87** CRISPRi knockdowns targeting unfolded protein response (UPR) | GEARS, CPA, PerturBench, Ahlmann-Eltze 2025 | [GEO: GSE90546](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE90546) |
 | **Replogle 2022 (GWPS)** | Genome-Wide Perturb-seq | **2,500,000+** cells | **Genome-scale** CRISPRi: 9,867 genes in K562 + 2,500 genes in RPE1 | STATE (*Cell* 2026), UCE, X-Cell, Arc Challenge | [GWPS Portal](https://gwps.wi.mit.edu/) |
 | **Arc Virtual Cell Challenge 2026** | Single-Cell Perturb-seq | 300 CRISPRi targets | Zero-shot generalization across **3 unseen cell lines** (Jurkat, U-87MG) | Arc Challenge 2026 (*Cell*), X-Cell | [Arc Institute](https://arcinstitute.org/) |
+| **X-Atlas/Pisces** | Genome-Wide CRISPRi Perturb-seq | **25,600,000** cells | Genome-wide CRISPRi across **16 cellular contexts** | X-Cell | bioRxiv |
 | **Dixit 2016** | Perturb-seq | ~200,000 cells | 10 transcription factors in hematopoietic cells | CellOT, scPerturb | [GEO: GSE90063](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE90063) |
 | **iGOF-Perturb-seq** | *In vivo* AAV Perturb-seq | Intracortical scRNA-seq | *In vivo* gain-of-function targeting astrocyte TFs in mouse brain | *Science* 392 (2026) | [Science DOI](https://doi.org/10.1126/science.adi9872) |
 
@@ -405,6 +421,14 @@ A curated registry of foundational benchmarks, perturbation datasets, spatiotemp
 * **DRF Benchmark Suite** (*Nature Biotechnology* 2026, Bo Wang Lab): Variance-calibrated benchmark correcting for gene-specific variance and miscalibration biases. [[DOI: 10.1038/s41587-026-03307-w]](https://doi.org/10.1038/s41587-026-03307-w)
 * **scArchon** (*Genome Biology* 2026, Radig et al.): Scalable benchmarking platform assessing 9 single-cell perturbation algorithms across chemical/bacterial multi-sample screens. [[DOI: 10.1186/s13059-026-04104-x]](https://doi.org/10.1186/s13059-026-04104-x)
 * **scPerturb / Perturb-Bench** (*Nature Methods* 2024 & 2026): Centralized repository of 44 harmonized Perturb-seq datasets formatted for machine learning. [[scPerturb]](https://scperturb.org/)
+
+---
+
+## 9. Reviews & Surveys
+
+| Year | Title / Focus | Authors / Venue | Key Coverage & Contributions | Resource / Link |
+| :--- | :--- | :--- | :--- | :--- |
+| **2026** | **The Landscape of Single-Cell Foundation Models: Design Principles, Applications, and Open Challenges** | Jiang, Fang, ..., Theodoris, Qiu, Ding (*Preprint*) | Comprehensive 42-page survey + 6 supplementary tables covering tokenization, backbones, pretraining objectives (60+ scFMs), scaling laws, wet-lab discovery, and virtual cell / AI agent directions | [GitHub](https://github.com/OmicsML/awesome-foundation-model-single-cell-papers) |
 
 ---
 
