@@ -1,13 +1,22 @@
 <div align="center">
 
+<img src="assets/social_preview.png" alt="Awesome Virtual Cell 2026 Banner" width="100%" style="border-radius: 12px; margin-bottom: 16px;" />
+
 # 🧬 Awesome Virtual Cell, Perturbation Biology & AI4Bio (2026)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![Web Portal](https://img.shields.io/badge/Interactive%20Portal-GitHub%20Pages-2563eb?style=flat-square&logo=githubpages)](https://zwyang2004.github.io/Awesome-Virtual-Cell-2026/)
+[![Academic Radar](https://img.shields.io/badge/Radar-Weekly%20Scanner-8b5cf6?style=flat-square&logo=githubactions)](LATEST_RADAR.md)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
+[![Submit Paper](https://img.shields.io/badge/Contribute-Submit%20Paper-2da44e?style=flat-square&logo=github)](https://github.com/zwYang2004/Awesome-Virtual-Cell-2026/issues/new?template=paper_submission.yml)
+
 ![Focus](https://img.shields.io/badge/Focus-Virtual_Cell_%7C_Perturbation_%7C_scFM_%7C_AIxRNA-0969da?style=flat-square)
 ![Venues](https://img.shields.io/badge/Venues-CNS_%7C_ICML_%7C_ICLR_%7C_NeurIPS_%7C_AAAI-2da44e?style=flat-square)
 ![Updated](https://img.shields.io/badge/Updated-2026--11-bf3989?style=flat-square)
 
 **A curated, chronologically ordered (2026 $\to$ 2023) research hub for Virtual Cells, Single-Cell Perturbation Prediction, Genomic & Single-Cell Foundation Models, AI × RNA Design, and Multi-Agent Scientific Discovery.**
+
+[🌐 **Launch Interactive Web Portal**](https://zwyang2004.github.io/Awesome-Virtual-Cell-2026/) &nbsp;|&nbsp; [📡 **Weekly Preprint Radar**](LATEST_RADAR.md) &nbsp;|&nbsp; [💬 **Academic Discussions**](https://github.com/zwYang2004/Awesome-Virtual-Cell-2026/discussions) &nbsp;|&nbsp; [🤝 **Paper Submission**](https://github.com/zwYang2004/Awesome-Virtual-Cell-2026/issues/new?template=paper_submission.yml)
 
 </div>
 

@@ -1,0 +1,38 @@
+name: 📡 Academic Radar Auto-Scanner
+
+on:
+  schedule:
+    # Run every Monday at 00:00 UTC (08:00 Beijing Time)
+    - cron: '0 0 * * 1'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions UI
+
+permissions:
+  contents: write
+
+jobs:
+  scan-preprints:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Academic Radar Scanner
+        run: |
+          python3 .github/scripts/academic_radar.py
+
+      - name: Commit and Push Updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Radar Bot"
+          if [[ -n $(git status -s LATEST_RADAR.md) ]]; then
+            git add LATEST_RADAR.md
+            git commit -m "🤖 chore(radar): update weekly preprint candidate pool [skip ci]"
+            git push
+          else
+            echo "No new candidate preprints to commit."
+          fi

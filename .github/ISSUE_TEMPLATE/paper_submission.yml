@@ -1,0 +1,95 @@
+name: 📄 Suggest a New Paper or Benchmark
+description: Recommend a frontier paper, dataset, or world model to be indexed in the Awesome-Virtual-Cell registry.
+title: "[Paper]: "
+labels: ["paper submission", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to **Awesome-Virtual-Cell-2026**!
+        We maintain strict curation standards focused on methodologically rigorous, benchmark-grounded works in Virtual Cells, Single-Cell Perturbation, and Flow Matching.
+
+  - type: input
+    id: paper_title
+    attributes:
+      label: Paper Title
+      placeholder: "e.g., ReliFlow: Reliability-Calibrated Residual Transport for Combinatorial Single-Cell Perturbation Prediction"
+    validations:
+      required: true
+
+  - type: input
+    id: authors_affiliation
+    attributes:
+      label: Authors & Primary Affiliation
+      placeholder: "e.g., First Author et al. (Stanford / Westlake / Helmholtz Munich)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: venue
+    attributes:
+      label: Publication Venue / Status
+      options:
+        - "Nature / Science / Cell"
+        - "Nature Methods / Nature Biotech / Nature Genetics"
+        - "Cell Systems / Patterns (Cell Press)"
+        - "ICLR / NeurIPS / ICML"
+        - "bioRxiv Preprint"
+        - "arXiv Preprint"
+        - "Other Journal / Conference"
+    validations:
+      required: true
+
+  - type: input
+    id: paper_url
+    attributes:
+      label: Paper Link (DOI / arXiv / bioRxiv URL)
+      placeholder: "https://arxiv.org/abs/..."
+    validations:
+      required: true
+
+  - type: input
+    id: code_url
+    attributes:
+      label: Official Code / Repository URL (if available)
+      placeholder: "https://github.com/..."
+    validations:
+      required: false
+
+  - type: input
+    id: benchmark_dataset
+    attributes:
+      label: Key Benchmark / Dataset Evaluated
+      placeholder: "e.g., Norman 2019, Replogle 2022, Scip-Plex3, Adamson 2016"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: Recommended Section
+      options:
+        - "1. Single-Cell Perturbation Dynamics & Trajectory Modeling"
+        - "2. Foundation Models for Single-Cell Biology"
+        - "3. Virtual Cell World Models & In-Silico Simulators"
+        - "4. Benchmarks, Atlases & Evaluation Ecosystems"
+        - "5. AI × RNA Therapeutics & Closed-Loop Agents"
+        - "6. Other Top-Tier AI Works & Foundational Methodologies"
+    validations:
+      required: true
+
+  - type: textarea
+    id: contribution
+    attributes:
+      label: Core Contribution & Methodology Highlight (1-3 sentences)
+      placeholder: "Briefly describe what makes this work significant (e.g., algorithmic breakthrough, overcoming destructive sampling, scaling up zero-shot generalization)..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: self_check
+    attributes:
+      label: Quality & Reproducibility Check
+      options:
+        - label: I have verified that this work contains reproducible methodological insights or benchmark experimental comparisons.
+          required: true

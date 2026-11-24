@@ -1,0 +1,22 @@
+name: 🔧 Report a Broken Link or Correction
+description: Report a broken URL, incorrect benchmark citation, or metadata correction.
+title: "[Fix]: "
+labels: ["maintenance"]
+body:
+  - type: markdown
+    attributes:
+      value: "Help us keep the Awesome-Virtual-Cell registry pristine and accurate."
+  - type: input
+    id: target_paper
+    attributes:
+      label: Target Paper / Section
+      placeholder: "e.g., Section 1, UniPert-G2CP entry"
+    validations:
+      required: true
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: Description of Error & Suggested Correction
+      placeholder: "Explain what link is broken or what metadata needs updating..."
+    validations:
+      required: true

@@ -1,0 +1,133 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2005/svg">
+  <!-- Background Deep Gradient -->
+  <rect width="1280" height="640" fill="#0A0F1D"/>
+  <defs>
+    <radialGradient id="glow1" cx="20%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#1E3A8A" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0A0F1D" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="85%" cy="70%" r="55%">
+      <stop offset="0%" stop-color="#4C1D95" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#0A0F1D" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#93C5FD"/>
+    </linearGradient>
+    <linearGradient id="pillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="streamGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="streamGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ambient Glow -->
+  <rect width="1280" height="640" fill="url(#glow1)"/>
+  <rect width="1280" height="640" fill="url(#glow2)"/>
+
+  <!-- Grid overlay -->
+  <g opacity="0.08" stroke="#FFFFFF" stroke-width="1">
+    <line x1="80" y1="0" x2="80" y2="640"/>
+    <line x1="240" y1="0" x2="240" y2="640"/>
+    <line x1="400" y1="0" x2="400" y2="640"/>
+    <line x1="560" y1="0" x2="560" y2="640"/>
+    <line x1="720" y1="0" x2="720" y2="640"/>
+    <line x1="880" y1="0" x2="880" y2="640"/>
+    <line x1="1040" y1="0" x2="1040" y2="640"/>
+    <line x1="1200" y1="0" x2="1200" y2="640"/>
+    <line x1="0" y1="80" x2="1280" y2="80"/>
+    <line x1="0" y1="200" x2="1280" y2="200"/>
+    <line x1="0" y1="320" x2="1280" y2="320"/>
+    <line x1="0" y1="440" x2="1280" y2="440"/>
+    <line x1="0" y1="560" x2="1280" y2="560"/>
+  </g>
+
+  <!-- Flow Matching Dynamic Trajectory Streamlines (Right side background) -->
+  <path d="M 680,480 C 820,440 920,280 1180,240" stroke="url(#streamGrad1)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 680,500 C 850,510 980,360 1220,320" stroke="url(#streamGrad1)" stroke-width="2.5" stroke-dasharray="6,6" fill="none"/>
+  <path d="M 650,420 C 780,360 900,180 1140,140" stroke="url(#streamGrad2)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 720,540 C 880,580 1020,480 1240,420" stroke="url(#streamGrad2)" stroke-width="2" fill="none"/>
+
+  <!-- Cellular Nodes (Single Cells) -->
+  <circle cx="680" cy="480" r="9" fill="#38BDF8" opacity="0.9"/>
+  <circle cx="680" cy="480" r="18" stroke="#38BDF8" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="920" cy="280" r="7" fill="#818CF8" opacity="0.8"/>
+  <circle cx="1180" cy="240" r="11" fill="#C084FC" opacity="0.95"/>
+  <circle cx="1180" cy="240" r="22" stroke="#C084FC" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="1140" cy="140" r="8" fill="#34D399" opacity="0.85"/>
+  <circle cx="1220" cy="320" r="6" fill="#F472B6" opacity="0.75"/>
+  <circle cx="1240" cy="420" r="8" fill="#FBBF24" opacity="0.8"/>
+
+  <!-- Decorative Outer Border -->
+  <rect x="24" y="24" width="1232" height="592" rx="20" stroke="#334155" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <!-- Top Badge / Header Tag -->
+  <g transform="translate(80, 85)">
+    <rect width="365" height="38" rx="19" fill="#1E293B" stroke="#38BDF8" stroke-width="1.2" stroke-opacity="0.8"/>
+    <circle cx="20" cy="19" r="6" fill="#38BDF8"/>
+    <text x="36" y="24" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" letter-spacing="1">GENOME-SCALE IN-SILICO WORLD MODELS</text>
+  </g>
+
+  <!-- Main Hero Title -->
+  <g transform="translate(80, 205)">
+    <text x="0" y="0" fill="url(#titleGrad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="62" font-weight="800" letter-spacing="-1">Awesome Virtual Cell</text>
+    
+    <!-- Year 2026 Badge -->
+    <rect x="685" y="-56" width="145" height="58" rx="14" fill="url(#pillGrad)"/>
+    <text x="714" y="-16" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="34" font-weight="800">2026</text>
+  </g>
+
+  <!-- Subtitle -->
+  <g transform="translate(80, 260)">
+    <text x="0" y="0" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="400">
+      A Curated Registry for Single-Cell Perturbation Dynamics,
+    </text>
+    <text x="0" y="32" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="400">
+      Foundation Models &amp; Generative Cell Simulators
+    </text>
+  </g>
+
+  <!-- Feature Highlights Box -->
+  <g transform="translate(80, 350)">
+    <rect width="660" height="96" rx="12" fill="#0F172A" stroke="#1E293B" stroke-width="1.5"/>
+    
+    <!-- Item 1 -->
+    <text x="24" y="36" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700">80+ CURATED PAPERS</text>
+    <text x="24" y="66" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15">Cell, Nature, ICLR 2026, ICML</text>
+    
+    <line x1="230" y1="20" x2="230" y2="76" stroke="#1E293B" stroke-width="1.5"/>
+    
+    <!-- Item 2 -->
+    <text x="250" y="36" fill="#A855F7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700">FLOW MATCHING &amp; BRIDGES</text>
+    <text x="250" y="66" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15">Overcoming Destructive Sampling</text>
+
+    <line x1="475" y1="20" x2="475" y2="76" stroke="#1E293B" stroke-width="1.5"/>
+
+    <!-- Item 3 -->
+    <text x="495" y="36" fill="#34D399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700">4-EPOCH TIMELINE</text>
+    <text x="495" y="66" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15">10-Year Evolution (2016-2026)</text>
+  </g>
+
+  <!-- Bottom Badges Bar -->
+  <g transform="translate(80, 520)">
+    <!-- Zenodo Badge -->
+    <rect x="0" y="0" width="170" height="34" rx="6" fill="#0284C7"/>
+    <text x="14" y="22" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600">CERN Zenodo DOI</text>
+
+    <!-- License Badge -->
+    <rect x="185" y="0" width="135" height="34" rx="6" fill="#334155"/>
+    <text x="200" y="22" fill="#F1F5F9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600">CC-BY 4.0 Open</text>
+
+    <!-- Curator Tag -->
+    <rect x="335" y="0" width="190" height="34" rx="6" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+    <text x="350" y="22" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="500">Curator: <tspan fill="#38BDF8" font-weight="600">@zwYang2004</tspan></text>
+  </g>
+</svg>
