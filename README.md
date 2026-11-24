@@ -166,6 +166,8 @@ All works are organized into **5 core research pillars**, with papers inside eac
   - [7.4 Massive Observational Atlases & Lineage Tracing](#74-massive-observational-atlases--lineage-tracing)
   - [7.5 Genomics & Metagenomic Sequence Corpora](#75-genomics--metagenomic-sequence-corpora)
 - [8. Standardized Benchmark Suites & APIs](#8-standardized-benchmark-suites--apis)
+- [📌 Citation](#-citation)
+- [📜 License & Academic Attribution](#-license--academic-attribution)
 
 ---
 
@@ -382,6 +384,29 @@ A curated registry of foundational benchmarks, perturbation datasets, spatiotemp
 * **DRF Benchmark Suite** (*Nature Biotechnology* 2026, Bo Wang Lab): Variance-calibrated benchmark correcting for gene-specific variance and miscalibration biases. [[DOI: 10.1038/s41587-026-03307-w]](https://doi.org/10.1038/s41587-026-03307-w)
 * **scArchon** (*Genome Biology* 2026, Radig et al.): Scalable benchmarking platform assessing 9 single-cell perturbation algorithms across chemical/bacterial multi-sample screens. [[DOI: 10.1186/s13059-026-04104-x]](https://doi.org/10.1186/s13059-026-04104-x)
 * **scPerturb / Perturb-Bench** (*Nature Methods* 2024 & 2026): Centralized repository of 44 harmonized Perturb-seq datasets formatted for machine learning. [[scPerturb]](https://scperturb.org/)
+
+---
+
+## 📌 Citation
+
+If you use or reference this curated research hub, the 4-phase evolution roadmap, the taxonomy, or the benchmark dataset registry in your academic research or survey, please cite this repository:
+
+```bibtex
+@misc{yang2026awesomevirtualcell,
+  author       = {Zhiwei Yang},
+  title        = {Awesome-Virtual-Cell-2026: A Curated Research Hub for Virtual Cells, Perturbation Dynamics, and Foundation Models},
+  year         = {2026},
+  publisher    = {GitHub},
+  journal      = {GitHub repository},
+  howpublished = {\url{https://github.com/zwYang2004/Awesome-Virtual-Cell-2026}}
+}
+```
+
+---
+
+## 📜 License & Academic Attribution
+
+This project is licensed under the **[Creative Commons Attribution 4.0 International (CC-BY 4.0)](./LICENSE)** License. You are free to share, copy, and adapt the materials for academic and research purposes, provided that appropriate credit and citation are attributed to this repository.
 
 ---
 
