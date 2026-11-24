@@ -246,4 +246,65 @@ Task: Predict transcriptomic responses of **300 CRISPRi knockdowns** across **3 
 
 ---
 
+## 7. 📊 Benchmark & Atlas Datasets Registry
+
+A curated registry of foundational benchmarks, perturbation datasets, spatiotemporal atlases, and genomic corpora powering the virtual cell ecosystem:
+
+### 7.1 Single-Cell Genetic Perturbations (CRISPR / Perturb-seq)
+
+| Dataset | Modality / Assay | Scale / Coverage | Perturbation Design | Representative Models | Access / Portal |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Norman 2019** | Perturb-seq (scRNA-seq) | **110,000+** cells | **284** single & pairwise CRISPRa activations in K562 | GEARS, CPA, CellOT, scGen, Miller-Wang 2026 | [GEO: GSE133344](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE133344) |
+| **Adamson 2016** | Perturb-seq (scRNA-seq) | **66,000+** cells | **87** CRISPRi knockdowns targeting unfolded protein response (UPR) | GEARS, CPA, PerturBench, Ahlmann-Eltze 2025 | [GEO: GSE90546](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE90546) |
+| **Replogle 2022 (GWPS)** | Genome-Wide Perturb-seq | **2,500,000+** cells | **Genome-scale** CRISPRi: 9,867 genes in K562 + 2,500 genes in RPE1 | STATE (*Cell* 2026), UCE, X-Cell, Arc Challenge | [GWPS Portal](https://gwps.wi.mit.edu/) |
+| **Arc Virtual Cell Challenge 2026** | Single-Cell Perturb-seq | 300 CRISPRi targets | Zero-shot generalization across **3 unseen cell lines** (Jurkat, U-87MG) | Arc Challenge 2026 (*Cell*), X-Cell | [Arc Institute](https://arcinstitute.org/) |
+| **Dixit 2016** | Perturb-seq | ~200,000 cells | 10 transcription factors in hematopoietic cells | CellOT, scPerturb | [GEO: GSE90063](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE90063) |
+| **iGOF-Perturb-seq** | *In vivo* AAV Perturb-seq | Intracortical scRNA-seq | *In vivo* gain-of-function targeting astrocyte TFs in mouse brain | *Science* 392 (2026) | [Science DOI](https://doi.org/10.1126/science.adi9872) |
+
+### 7.2 Chemical & Small-Molecule Perturbations (High-Throughput Screens)
+
+| Dataset | Modality / Assay | Scale / Coverage | Compounds & Conditions | Representative Models | Access / Portal |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Tahoe-100M** (*Cell* 2026) | Combinatorial sci-RNA-seq | **100,000,000** cells | Hundreds of FDA-approved drugs, kinase inhibitors across dose ranges | Tahoe-100M (*Cell* 2026) | [Synapse Portal](https://www.synapse.org/) |
+| **Sci-Plex 3** (Srivatsan 2020) | sci-RNA-seq3 | **650,000** cells | **188** compounds targeting chromatin/transcription across 3 cell lines | ChemCPA, CellFlow, CellOT, scArchon | [GEO: GSE139944](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE139944) |
+| **Broad CMAP / L1000** | Luminex L1000 Profiling | **1.3M+** profiles | 19,811 small molecules across 978 landmark genes | CLADD, Virtual Biotech, Synergy Models | [Clue.io CMAP](https://clue.io/data) |
+
+### 7.3 Spatiotemporal Single-Cell Dynamics (Spatial Omics)
+
+| Dataset | Modality / Platform | Scale / Resolution | Biological Process & Timecourse | Representative Models | Access / Portal |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **MOSTA Mouse Organogenesis** | BGI Stereo-seq | **344,603** cells | Mouse embryonic organogenesis: E12.5 $\to$ E15.5 | **CytoBridge** (Nie et al.), Spateo, STORIES | [CNGBdb: CNP0001543](https://db.cngb.org/search/project/CNP0001543/) |
+| **TgCRND8 Alzheimer's Progression** | 10x Xenium In Situ | **172,092** cells | 2.5, 5.7, and 17.9 months of plaque progression (*Trem2/Spp1* in silico perturbation) | **CytoBridge** (bioRxiv 2026) | [10x Datasets](https://www.10xgenomics.com/datasets) |
+| **ARTISTA Axolotl Regeneration** | Stereo-seq | **46,199** cells | Brain damage regeneration: Day 2, 5, 10, 15, 20 post-injury | **CytoBridge**, *Science* 2022 | [CNGB: CNP0002068](https://db.cngb.org/) |
+| **Chicken Heart Development** | 10x Visium | 3,550 spots | Embryonic heart development: D4, D7, D10, D14 | **CytoBridge**, COMMOT | [GEO: GSE178663](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE178663) |
+| **SpatialCorpus-110M** | Multi-technology spatial omics | **110,000,000** cells | 73 spatial transcriptomics datasets across diverse tissues | **Nicheformer** (*Nat. Methods* 2025) | [Zenodo](https://zenodo.org/) |
+
+### 7.4 Massive Observational Atlases & Lineage Tracing
+
+| Dataset / Repository | Lead Organization | Cell Count | Technical Highlights | Target Models | Access Link |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **scBaseCount** | Youngblut et al. (*Cell* 2026) | **502,000,000** cells | Autonomously curated & normalized by AI agents from public archives | scFM Pretraining | [scBaseCount Portal](https://scbasecount.org/) |
+| **CZ CELLxGENE Discover** | Chan Zuckerberg Biohub | **80,000,000+** cells | Harmonized gene expression matrices with standardized cell ontology | UCE, TranscriptFormer, STATE | [CELLxGENE](https://cellxgene.cziscience.com/) |
+| **Human Cell Atlas (HCA)** | International HCA Consortium | **100,000,000+** cells | Comprehensive healthy human organ & tissue reference maps | Reference Mapping, UCE | [HCA Data Portal](https://data.humancellatlas.org/) |
+| **LARRY Lineage Tracing** | Weinreb et al. (*Science* 2020) | 130,000+ barcoded cells | Single-cell RNA-seq paired with lentiviral clonal DNA barcoding | DiffusionOT, CellFlow, BranchSBM | [GEO: GSE140802](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE140802) |
+
+### 7.5 Genomics & Metagenomic Sequence Corpora
+
+| Dataset | Size / Scale | Sequence Features | Core Research Applications | Target Models | Access Link |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **OpenGenome2 / GTDB** | **1.3 Tbp** sequence, 376M intergenic regions | Prokaryotic genomes & global metagenomic intergenic noncoding sequences | Unsupervised ncRNA clustering, CRISPR & Bridge RNA mining | **Evo-PIN & COMPASS** (Arc 2026), Evo 2 | [GTDB Database](https://gtdb.ecogenomic.org/) |
+| **Rfam 14.10+** | 4,000+ RNA families | Noncoding RNA covariance models & consensus secondary structures | Ground-truth benchmarking of ncRNA language representations | Evo-PIN, MARRI, RhoAgent | [Rfam Portal](https://rfam.org/) |
+| **IS110 Bridge RNA Loci** | Thousands of transposon loci | Natural bispecific noncoding guide RNAs for programmable DNA recombination | Programmable genomic rearrangement without DSBs | Bridge RNA (*Nature* 2024), COMPASS | [Arc Institute](https://arcinstitute.org/) |
+
+---
+
+## 8. Standardized Benchmark Suites & APIs
+
+* **PerturBench** (*NeurIPS 2025 Datasets & Benchmarks Track*, OpenProblems): Standardized benchmarking suite for OOD perturbation generalization and posterior collapse detection. [[OpenProblems]](https://openproblems.bio/)
+* **DRF Benchmark Suite** (*Nature Biotechnology* 2026, Bo Wang Lab): Variance-calibrated benchmark correcting for gene-specific variance and miscalibration biases. [[DOI: 10.1038/s41587-026-03307-w]](https://doi.org/10.1038/s41587-026-03307-w)
+* **scArchon** (*Genome Biology* 2026, Radig et al.): Scalable benchmarking platform assessing 9 single-cell perturbation algorithms across chemical/bacterial multi-sample screens. [[DOI: 10.1186/s13059-026-04104-x]](https://doi.org/10.1186/s13059-026-04104-x)
+* **scPerturb / Perturb-Bench** (*Nature Methods* 2024 & 2026): Centralized repository of 44 harmonized Perturb-seq datasets formatted for machine learning. [[scPerturb]](https://scperturb.org/)
+
+---
+
 *Curated for research tracking in Computational Biology, Virtual Cells, and AI-Driven RNA/Drug Discovery.*
