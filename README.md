@@ -5,6 +5,7 @@
 # 🧬 Awesome Virtual Cell, Perturbation Biology & AI4Bio (2026)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![DOI](https://zenodo.org/badge/1469549947.svg)](https://zenodo.org/records/24489534)
 [![Web Portal](https://img.shields.io/badge/Interactive%20Portal-GitHub%20Pages-2563eb?style=flat-square&logo=githubpages)](https://zwyang2004.github.io/Awesome-Virtual-Cell-2026/)
 [![Academic Radar](https://img.shields.io/badge/Radar-Weekly%20Scanner-8b5cf6?style=flat-square&logo=githubactions)](LATEST_RADAR.md)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
@@ -402,11 +403,11 @@ If you use or reference this curated research hub, the 4-phase evolution roadmap
 
 ```bibtex
 @misc{yang2026awesomevirtualcell,
-  author       = {Zhiwei Yang},
+  author       = {Zhiwen Yang},
   title        = {Awesome-Virtual-Cell-2026: A Curated Research Hub for Virtual Cells, Perturbation Dynamics, and Foundation Models},
   year         = {2026},
-  publisher    = {GitHub},
-  journal      = {GitHub repository},
+  doi          = {10.5281/zenodo.24489534},
+  publisher    = {Zenodo / GitHub},
   howpublished = {\url{https://github.com/zwYang2004/Awesome-Virtual-Cell-2026}}
 }
 ```

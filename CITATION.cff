@@ -2,10 +2,11 @@ cff-version: 1.2.0
 message: "If you use or reference this curated research hub, taxonomy, or dataset registry in your research, please cite it as below."
 authors:
   - family-names: "Yang"
-    given-names: "Zhiwei"
+    given-names: "Zhiwen"
     alias: "zwYang2004"
 title: "Awesome-Virtual-Cell-2026: A Curated Research Hub for Virtual Cells, Single-Cell Perturbation Biology, and Foundation Models"
 version: 1.0.0
+doi: "10.5281/zenodo.24489534"
 date-released: 2026-11-24
 url: "https://github.com/zwYang2004/Awesome-Virtual-Cell-2026"
 repository-code: "https://github.com/zwYang2004/Awesome-Virtual-Cell-2026"
