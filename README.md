@@ -168,6 +168,8 @@ All works are organized into **5 core research pillars**, with papers inside eac
   - [3.3 Critical Evaluations & Reality Checks](#33-critical-evaluations--reality-checks)
 - [4. Benchmarks & Large-Scale Atlases (`DB`)](#4-benchmarks--large-scale-atlases-db)
 - [5. Therapeutics, RNA/Protein Design & AI Agents (`TX`)](#5-therapeutics-rnaprotein-design--ai-agents-tx)
+  - [5.1 AI Co-Scientists & Autonomous Bio-Agents](#51-ai-co-scientists--autonomous-bio-agents)
+  - [5.2 Biomolecular, RNA & Therapeutics Design](#52-biomolecular-rna--therapeutics-design)
 - [6. Arc 2026 Virtual Cell Challenge: Top-7 Takeaways](#6-arc-2026-virtual-cell-challenge-top-7-takeaways)
 - [7. 📊 Benchmark & Atlas Datasets Registry](#7--benchmark--atlas-datasets-registry)
   - [7.1 Single-Cell Genetic Perturbations (CRISPR / Perturb-seq)](#71-single-cell-genetic-perturbations-crispr--perturb-seq)
@@ -306,14 +308,22 @@ All works are organized into **5 core research pillars**, with papers inside eac
 
 ## 5. Therapeutics, RNA/Protein Design & AI Agents (`TX`)
 
+### 5.1 AI Co-Scientists & Autonomous Bio-Agents
+
 | Year | Method / Title | Venue | Benchmark / Key Dataset | Core Idea & Mechanism | Link / DOI |
 | :---: | :--- | :--- | :--- | :--- | :--- |
-| **2027** | **SoupFold**: Co-folding with a Soup of Representations | *ICLR* (Full Score) | CASP15/16, CAMEO, PDB antibody-antigen | Fuses frozen pair representations from AF3, Protenix, ESMFold2, OpenDDE for complex prediction | [OpenReview](https://openreview.net/forum?id=Jn7WiQ9LtS) |
+| **2026** | **OpenScientist**: Open agentic AI co-scientist for clinical & biomedical discovery | *Nat. Med.* | SEABIRD AD plasma/PET, plasma proteomics survival, NFT single-soma RNA-seq, myeloma | Open-source (Apache 2.0), auditable (KSDS) & air-gapped autonomous AI co-scientist with modular Agent Skills | [DOI](https://doi.org/10.1038/s41591-026-04808-6) |
 | **2026** | **RhoAgent & RDiff**: Programmable functional RNA design | *Nat. Biotechnol.* | PDB RNA, Ribocentre 3D, wet-lab cleavage | LLM virtual scientist + 2-stage cascaded diffusion (RDiff) for wet-lab validated functional RNA design | [DOI](https://doi.org/10.1038/s41587-026-03362-3) |
 | **2026** | **DiscoveryAgent**: Scientist-centric Agentic AI | arXiv | ProteinGym (106 baselines), CD4+ T-cell genomics | Scientist-steered agentic search + autonomous audit agents catching errors & discovering relay genes | [arXiv:2611.21950](https://arxiv.org/abs/2611.21950) |
 | **2026** | **The Virtual Biotech**: Multi-agent framework for discovery | *Science* | Target discovery benchmarks, preclinical portfolios | Corporate-structured multi-agent AI system (CSO, Biology, Pharmacology, Clinical agents) | *Science* |
 | **2026** | **CLADD**: RAG-Enhanced Agents for Drug Discovery | *AAAI* | ChEMBL, BindingDB, PubChem, DrugBank | Zero-finetuning RAG + Planning/KG/Molecular specialist agent teams | [GitHub](https://github.com/Genentech/CLADD) |
 | **2026** | **Medea**: Multi-omics AI agent for therapeutic reasoning | bioRxiv | Multi-omics clinical trials & therapeutic response cohorts | Autonomous omics AI agent for cross-context target prioritization & mechanism inference | [bioRxiv](https://www.biorxiv.org/content/10.64898/2026.01.16.696667) |
+
+### 5.2 Biomolecular, RNA & Therapeutics Design
+
+| Year | Method / Title | Venue | Benchmark / Key Dataset | Core Idea & Mechanism | Link / DOI |
+| :---: | :--- | :--- | :--- | :--- | :--- |
+| **2027** | **SoupFold**: Co-folding with a Soup of Representations | *ICLR* (Full Score) | CASP15/16, CAMEO, PDB antibody-antigen | Fuses frozen pair representations from AF3, Protenix, ESMFold2, OpenDDE for complex prediction | [OpenReview](https://openreview.net/forum?id=Jn7WiQ9LtS) |
 | **2026** | **Apo2Mol**: Dynamic Pocket-Aware Molecule Diffusion | *AAAI* | CrossDocked2020, Binding MOAD | 3D small-molecule generation explicitly modeling protein pocket conformational flexibility | [arXiv:2511.14559](https://arxiv.org/abs/2511.14559) |
 | **2026** | **DS-ProGen**: Dual-Structure Deep Language Model | *AAAI* | PDBbind, Nucleic Acid Database (NDB) | Dual-structure model combining backbone geometry & surface descriptors for protein-RNA design | [arXiv:2505.12511](https://arxiv.org/abs/2505.12511) |
 | **2026** | **LongevityBench / Longevity-LLMs** | *Cell* 189 | Tabular aging interventions & longevity literature | Standardized longevity biology benchmark assessing LLM predictive reasoning | *Cell* 189 |
