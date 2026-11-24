@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="assets/social_preview.png" alt="Awesome Virtual Cell 2026 Banner" width="100%" style="border-radius: 12px; margin-bottom: 16px;" />
-
 # 🧬 Awesome Virtual Cell, Perturbation Biology & AI4Bio (2026)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
@@ -97,36 +95,38 @@ flowchart TB
 The virtual cell and perturbation biology field has evolved through **four distinct historical epochs**, driven by the synchronized scaling of **experimental screening throughput** and **generative mathematical mechanics**:
 
 ```mermaid
-flowchart LR
-    subgraph E1["🌱 Phase 1 (2016–2019): Discrete Snapshots"]
-        direction TB
-        D1["📊 Data: Perturb-seq & Norman '19 (100k cells, Pairs)"]
-        M1["🧠 Model: Waddington-OT & scGen/CPA (Latent VAE)"]
-        D1 --> M1
+flowchart TD
+    subgraph E1["🌱 Epoch 1 (2016–2019): Discrete Snapshot Profiling"]
+        direction LR
+        D1["📊 <b>Datasets</b>: Perturb-seq (100k cells), Norman 2019 (284 CRISPRa pairs)"]
+        M1["🧠 <b>AI Mechanics</b>: Waddington-OT (Static OT), scGen / CPA (Latent Vector Addition VAE)"]
+        D1 ==> M1
     end
 
-    subgraph E2["⚡ Phase 2 (2022–2023): Genome Scale & Neural OT"]
-        direction TB
-        D2["📊 Data: Replogle GWPS '22 (2.5M cells) & Sci-Plex 3"]
-        M2["🧠 Model: CellOT (Neural OT) & Flow Matching (Lipman)"]
-        D2 --> M2
+    subgraph E2["⚡ Epoch 2 (2022–2023): Genome-Scale Screens & Neural OT"]
+        direction LR
+        D2["📊 <b>Datasets</b>: Replogle GWPS '22 (Genome-Wide CRISPRi, 2.5M cells), Sci-Plex 3 (650k cells)"]
+        M2["🧠 <b>AI Mechanics</b>: CellOT (Neural Dual OT), Flow Matching Foundations (Lipman / Albergo '23)"]
+        D2 ==> M2
     end
 
-    subgraph E3["🌊 Phase 3 (2024–2025): Continuous Flows & Audits"]
-        direction TB
-        D3["📊 Data: SpatialCorpus-110M & IS110 Bridge RNA"]
-        M3["🧠 Model: CellFlow (Continuous Flow) & Metric Debate"]
-        D3 --> M3
+    subgraph E3["🌊 Epoch 3 (2024–2025): Continuous Flows, Schrödinger Bridges & Metric Audits"]
+        direction LR
+        D3["📊 <b>Datasets</b>: SpatialCorpus-110M (73 spatial datasets), IS110 Bridge RNA, OpenProblems Perturb-Bench"]
+        M3["🧠 <b>AI Mechanics</b>: CellFlow (Continuous Flows), CytoBridge (Mean-Field SB); Linear vs DL Audit (Nat Methods)"]
+        D3 ==> M3
     end
 
-    subgraph E4["🌐 Phase 4 (2026+): Virtual Cells & World Models"]
-        direction TB
-        D4["📊 Data: Tahoe-100M & scBaseCount (100M–502M cells)"]
-        M4["🧠 Model: CytoBridge (Mean-Field SB) & UniPert (Cell)"]
-        D4 --> M4
+    subgraph E4["🌐 Epoch 4 (2026+): Multi-Modal World Models, 100M+ Atlases & Wet-Lab Loops"]
+        direction LR
+        D4["📊 <b>Datasets</b>: Tahoe-100M (100M drug cells), scBaseCount (502M curated cells), Arc Virtual Cell 2026"]
+        M4["🧠 <b>AI Mechanics</b>: Virtual Cell World Models (UniPert-G2CP, STATE, Evo-PIN), Autonomous AI Discovery Agents"]
+        D4 ==> M4
     end
 
-    E1 ==> E2 ==> E3 ==> E4
+    E1 ==>|"Scale Leap: 100k → 2.5M Cells"| E2
+    E2 ==>|"Overcoming Destructive Sampling via Continuous OT"| E3
+    E3 ==>|"100M+ Scaling & Multi-Modal Foundation Simulators"| E4
 ```
 
 | Era | Key Dataset & Assay Milestones | AI & Computational Paradigm Milestones | Core Paradigm Shift & Theoretical Leap |
