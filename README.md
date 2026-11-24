@@ -155,12 +155,16 @@ All works are organized into **5 core research pillars**, with papers inside eac
 ## 📑 Table of Contents
 
 - [⏳ Evolution Timeline: Datasets vs. AI Paradigms (2016 – 2026)](#-evolution-timeline-co-development-of-datasets--ai-paradigms-2016--2026)
+- [0. Reviews & Surveys](#0-reviews--surveys)
 - [1. Perturbation & Cellular Dynamics (`PT`)](#1-perturbation--cellular-dynamics-pt)
   - [1.1 Optimal Transport, Flow Matching & Bridges (Sorted by Year)](#11-optimal-transport-flow-matching--bridges-sorted-by-year)
   - [1.2 Large-Scale & Causal Perturbation Prediction (Sorted by Year)](#12-large-scale--causal-perturbation-prediction-sorted-by-year)
   - [1.3 Lab-in-the-Loop & Inverse Cell Fate Design (Sorted by Year)](#13-lab-in-the-loop--inverse-cell-fate-design-sorted-by-year)
 - [2. Foundation Models: Single-Cell, Spatial & Genomics (`FM`)](#2-foundation-models-single-cell-spatial--genomics-fm)
   - [2.1 Single-Cell & Spatial Foundation Models (Sorted by Year)](#21-single-cell--spatial-foundation-models-sorted-by-year)
+    - [2.1.1 Unimodal (`scRNA-seq` / `scATAC-seq`)](#211-unimodal-scrna-seq--scatac-seq)
+    - [2.1.2 Multimodal & Spatial](#212-multimodal--spatial)
+    - [2.1.3 LLM-Enhanced & Text-Grounded](#213-llm-enhanced--text-grounded)
   - [2.2 Genomic & RNA Language Models (Sorted by Year)](#22-genomic--rna-language-models-sorted-by-year)
 - [3. Virtual Cell & World Models (`VC`)](#3-virtual-cell--world-models-vc)
   - [3.1 World Models & Theoretical Perspectives](#31-world-models--theoretical-perspectives)
@@ -178,9 +182,16 @@ All works are organized into **5 core research pillars**, with papers inside eac
   - [7.4 Massive Observational Atlases & Lineage Tracing](#74-massive-observational-atlases--lineage-tracing)
   - [7.5 Genomics & Metagenomic Sequence Corpora](#75-genomics--metagenomic-sequence-corpora)
 - [8. Standardized Benchmark Suites & APIs](#8-standardized-benchmark-suites--apis)
-- [9. Reviews & Surveys](#9-reviews--surveys)
 - [📌 Citation](#-citation)
 - [📜 License & Academic Attribution](#-license--academic-attribution)
+
+---
+
+## 0. Reviews & Surveys
+
+| Year | Title / Focus | Authors / Venue | Key Coverage & Contributions | Resource / Link |
+| :--- | :--- | :--- | :--- | :--- |
+| **2026** | **The Landscape of Single-Cell Foundation Models: Design Principles, Applications, and Open Challenges** | Jiang, Fang, ..., Theodoris, Qiu, Ding (*Preprint*) | Comprehensive 42-page survey + 6 supplementary tables covering tokenization, backbones, pretraining objectives (60+ scFMs), scaling laws, wet-lab discovery, and virtual cell / AI agent directions | [GitHub](https://github.com/OmicsML/awesome-foundation-model-single-cell-papers) |
 
 ---
 
@@ -241,21 +252,33 @@ All works are organized into **5 core research pillars**, with papers inside eac
 
 ### 2.1 Single-Cell & Spatial Foundation Models (Sorted by Year)
 
+#### 2.1.1 Unimodal (`scRNA-seq` / `scATAC-seq`)
+
 | Year | Method / Title | Venue | Benchmark / Key Dataset | Core Idea & Mechanism | Link / DOI |
 | :---: | :--- | :--- | :--- | :--- | :--- |
 | **2026** | **UCE**: Universal cell embedding | *Nature* 656 | CELLxGENE, Human Cell Atlas (36M cells across 8 species) | Zero-shot universal cell embedding foundation model across species & platforms | [Nature](https://doi.org/10.1038/s41586-026-10689-z) |
 | **2026** | **TranscriptFormer**: Generative cell atlas | *Science* 393 | Cross-species evolutionary single-cell atlas (1.5B years) | Generative cross-species single-cell foundation model modeling ancestral states | *Science* |
-| **2026** | **HyperST**: Hyperbolic Spatial Learning | *CVPR* | 10x Visium paired H&E histology + spatial transcriptomics | Hyperbolic hierarchical image-gene alignment for spatial transcriptomics prediction | CVPR 2026 |
 | **2026** | **scKITE**: Knowledge-enhanced scFM | arXiv | DoRothEA / SCENIC regulon networks, PBMC scRNA-seq | Knowledge-enhanced scFM with explicit gene regulatory network supervision | arXiv |
 | **2026** | **MaxToki**: Temporal AI for aging trajectories | bioRxiv | Human aging trajectories (in vitro & mouse) | Mixed discrete-continuous loss modeling ordered cell-state trajectories & pro-aging drivers | bioRxiv |
-| **2026** | **HoloCell**: Gene-anchored holistic scFM | bioRxiv | Paired scRNA-seq, scATAC-seq & proteomics | Unified gene-anchored hierarchical tokenization across multi-omic modalities | bioRxiv |
 | **2026** | **SIGnature**: Interpreting frozen scFMs | *Nature Biotechnology* | Large-scale single-cell atlases | XAI attribution on frozen scFMs deriving gene-importance scores & weakly expressed regulators | *Nature Biotechnology* |
 | **2025** | **PULSAR**: Multi-scale & multicellular scFM | bioRxiv | Donor-level single-cell cohorts | Hierarchical molecular-cellular-donor encoder for disease classification & cytokine simulation | bioRxiv |
 | **2025** | **scPRINT-2**: Next-gen scFM & modular ablation | bioRxiv | 50M+ cells, multi-cell GNN context | GNN-based intercellular encoder + 12-component modular evaluation of design choices | bioRxiv |
+| **2024** | **Reference Mapping for Single-Cell Analysis** | *Cell* 187 | Human Cell Atlas (HCA), Azimuth reference panels | Foundational framework for rapid automated cell typing, projection & multi-atlas integration | [DOI](https://doi.org/10.1016/j.cell.2024.03.015) |
+
+#### 2.1.2 Multimodal & Spatial
+
+| Year | Method / Title | Venue | Benchmark / Key Dataset | Core Idea & Mechanism | Link / DOI |
+| :---: | :--- | :--- | :--- | :--- | :--- |
+| **2026** | **HyperST**: Hyperbolic Spatial Learning | *CVPR* | 10x Visium paired H&E histology + spatial transcriptomics | Hyperbolic hierarchical image-gene alignment for spatial transcriptomics prediction | CVPR 2026 |
+| **2026** | **HoloCell**: Gene-anchored holistic scFM | bioRxiv | Paired scRNA-seq, scATAC-seq & proteomics | Unified gene-anchored hierarchical tokenization across multi-omic modalities | bioRxiv |
+| **2025** | **Nicheformer**: Spatial single-cell FM | *Nat. Methods* | SpatialCorpus-110M (110M cells across 73 spatial datasets) | Trained on SpatialCorpus-110M; projects dissociated scRNA-seq to spatial niches | [DOI](https://doi.org/10.1038/s41592-025-02814-z) |
+
+#### 2.1.3 LLM-Enhanced & Text-Grounded
+
+| Year | Method / Title | Venue | Benchmark / Key Dataset | Core Idea & Mechanism | Link / DOI |
+| :---: | :--- | :--- | :--- | :--- | :--- |
 | **2025** | **CellHermes**: LLM-unified multimodal omics | bioRxiv | Transcriptomics + PPI graphs + text | Reformulates omics profiles & PPI networks into QA templates for unified LLM reasoning | bioRxiv |
 | **2025** | **C2S-Scale**: Scaling LLMs for single-cell analysis | bioRxiv | Multi-cell QA & dual-context drug screens | Instruction-tuned + RL-aligned Cell2Sentence LLM nominating wet-lab validated enhancers | bioRxiv |
-| **2025** | **Nicheformer**: Spatial single-cell FM | *Nat. Methods* | SpatialCorpus-110M (110M cells across 73 spatial datasets) | Trained on SpatialCorpus-110M; projects dissociated scRNA-seq to spatial niches | [DOI](https://doi.org/10.1038/s41592-025-02814-z) |
-| **2024** | **Reference Mapping for Single-Cell Analysis** | *Cell* 187 | Human Cell Atlas (HCA), Azimuth reference panels | Foundational framework for rapid automated cell typing, projection & multi-atlas integration | [DOI](https://doi.org/10.1016/j.cell.2024.03.015) |
 
 ### 2.2 Genomic & RNA Language Models (Sorted by Year)
 
@@ -421,14 +444,6 @@ A curated registry of foundational benchmarks, perturbation datasets, spatiotemp
 * **DRF Benchmark Suite** (*Nature Biotechnology* 2026, Bo Wang Lab): Variance-calibrated benchmark correcting for gene-specific variance and miscalibration biases. [[DOI: 10.1038/s41587-026-03307-w]](https://doi.org/10.1038/s41587-026-03307-w)
 * **scArchon** (*Genome Biology* 2026, Radig et al.): Scalable benchmarking platform assessing 9 single-cell perturbation algorithms across chemical/bacterial multi-sample screens. [[DOI: 10.1186/s13059-026-04104-x]](https://doi.org/10.1186/s13059-026-04104-x)
 * **scPerturb / Perturb-Bench** (*Nature Methods* 2024 & 2026): Centralized repository of 44 harmonized Perturb-seq datasets formatted for machine learning. [[scPerturb]](https://scperturb.org/)
-
----
-
-## 9. Reviews & Surveys
-
-| Year | Title / Focus | Authors / Venue | Key Coverage & Contributions | Resource / Link |
-| :--- | :--- | :--- | :--- | :--- |
-| **2026** | **The Landscape of Single-Cell Foundation Models: Design Principles, Applications, and Open Challenges** | Jiang, Fang, ..., Theodoris, Qiu, Ding (*Preprint*) | Comprehensive 42-page survey + 6 supplementary tables covering tokenization, backbones, pretraining objectives (60+ scFMs), scaling laws, wet-lab discovery, and virtual cell / AI agent directions | [GitHub](https://github.com/OmicsML/awesome-foundation-model-single-cell-papers) |
 
 ---
 
