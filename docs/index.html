@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Awesome Virtual Cell 2026 | Frontier Research Registry</title>
+  <title>Awesome Virtual Cell 2026 | Research Hub</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="A curated registry of frontier papers, benchmarks, and world models for Virtual Cells, Single-Cell Perturbation Dynamics, and Foundation Models.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -11,18 +11,19 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
   <style>
     :root {
-      --base-font-size: 15px;
-      --base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      --theme-color: #2563eb;
-      --sidebar-width: 290px;
-      --content-max-width: 1080px;
+      --base-font-size: 14.5px;
+      --base-line-height: 1.65;
+      --base-font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --theme-color: #1d4ed8;
+      --sidebar-width: 270px;
+      --content-max-width: 1040px;
       
       /* Pure Academic Clean Light Palette */
       --body-background: #ffffff;
       --body-color: #1e293b;
       --heading-color: #0f172a;
-      --link-color: #2563eb;
-      --link-color--hover: #1d4ed8;
+      --link-color: #1d4ed8;
+      --link-color--hover: #1e40af;
       
       /* Sidebar */
       --sidebar-background: #f8fafc;
@@ -30,28 +31,28 @@
       --sidebar-name-color: #0f172a;
       --sidebar-name-font-weight: 700;
       --sidebar-nav-link-color: #334155;
-      --sidebar-nav-link-color--active: #2563eb;
+      --sidebar-nav-link-color--active: #1d4ed8;
       --sidebar-nav-link-font-weight--active: 600;
       
       /* Tables */
       --table-border-color: #e2e8f0;
-      --table-head-background: #f1f5f9;
+      --table-head-background: #f8fafc;
       --table-head-color: #0f172a;
-      --table-row-background--stripe: #f8fafc;
+      --table-row-background--stripe: #fcfdfe;
       
-      /* Code & Badges */
+      /* Code */
       --code-inline-background: #f1f5f9;
       --code-inline-color: #0f172a;
       --code-block-background: #f8fafc;
       --code-block-color: #1e293b;
     }
 
-    /* Force Clean Academic Light Styling */
     body {
       background-color: #ffffff !important;
       color: #1e293b !important;
       font-family: var(--base-font-family);
       -webkit-font-smoothing: antialiased;
+      line-height: var(--base-line-height);
     }
 
     .sidebar {
@@ -60,66 +61,95 @@
     }
     
     .sidebar-nav strong {
-      color: #0f172a;
-      font-size: 0.85rem;
+      color: #475569;
+      font-size: 0.80rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
+      margin-top: 1rem;
+      display: inline-block;
     }
 
     .sidebar-nav a {
       color: #334155 !important;
-      font-size: 0.92rem;
+      font-size: 0.88rem;
+      padding: 4px 0;
     }
 
     .sidebar-nav a:hover, .sidebar-nav li.active > a {
-      color: #2563eb !important;
+      color: #1d4ed8 !important;
       font-weight: 600;
     }
 
-    /* Modern Academic Tables */
+    /* Academic Headings */
+    h1 {
+      font-size: 1.85rem !important;
+      font-weight: 700 !important;
+      color: #0f172a !important;
+      letter-spacing: -0.02em;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+      margin-top: 1.5rem !important;
+    }
+
+    h2 {
+      font-size: 1.35rem !important;
+      font-weight: 600 !important;
+      color: #0f172a !important;
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 0.4rem;
+      margin-top: 2rem !important;
+    }
+
+    h3 {
+      font-size: 1.10rem !important;
+      font-weight: 600 !important;
+      color: #1e293b !important;
+    }
+
+    /* Structured Academic Tables */
     .markdown-section table {
       display: table !important;
       width: 100% !important;
       border-collapse: collapse;
-      margin: 1.5rem 0;
+      margin: 1.2rem 0;
       background: #ffffff;
-      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-      border-radius: 8px;
+      border-radius: 6px;
       overflow: hidden;
       border: 1px solid #e2e8f0;
     }
 
     .markdown-section table th, .markdown-section table td {
-      padding: 12px 14px;
+      padding: 9px 12px;
       border: 1px solid #e2e8f0;
-      font-size: 0.90rem;
+      font-size: 0.86rem;
       line-height: 1.5;
     }
 
     .markdown-section table th {
-      background-color: #f1f5f9 !important;
+      background-color: #f8fafc !important;
       color: #0f172a !important;
       font-weight: 600;
       text-align: left;
     }
 
     .markdown-section table tr:nth-child(even) {
-      background-color: #f8fafc;
+      background-color: #fbfcfe;
     }
 
-    /* Mermaid Diagrams: Crisp Academic Contrast */
+    /* Mermaid Architecture & Timelines: Clean Light Background */
     .mermaid {
       background: #ffffff;
-      padding: 1.2rem;
+      padding: 1rem;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      margin: 1.5rem 0;
+      border-radius: 6px;
+      margin: 1.2rem 0;
       display: flex;
       justify-content: center;
       overflow-x: auto;
     }
 
-    /* Badges alignment */
+    /* Remove distracting outline */
     .markdown-section p img {
       margin: 2px 2px;
       vertical-align: middle;
@@ -127,7 +157,7 @@
   </style>
 </head>
 <body>
-  <div id="app">Loading Awesome Virtual Cell 2026...</div>
+  <div id="app">Loading documentation...</div>
   
   <!-- Mermaid -->
   <script type="module">
@@ -136,13 +166,13 @@
       startOnLoad: false,
       theme: 'neutral',
       themeVariables: {
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-        fontSize: '13px',
-        primaryColor: '#eff6ff',
-        primaryBorderColor: '#3b82f6',
-        primaryTextColor: '#1e293b',
+        fontFamily: '-apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif',
+        fontSize: '12.5px',
+        primaryColor: '#f8fafc',
+        primaryBorderColor: '#64748b',
+        primaryTextColor: '#0f172a',
         lineColor: '#64748b',
-        secondaryColor: '#f8fafc',
+        secondaryColor: '#ffffff',
         tertiaryColor: '#ffffff',
         edgeLabelBackground: '#ffffff'
       }
@@ -162,18 +192,18 @@
       search: {
         maxAge: 86400000,
         paths: 'auto',
-        placeholder: '🔍 Search papers, datasets, methods...',
-        noData: 'No matching papers found!',
+        placeholder: 'Search papers, benchmarks, methods...',
+        noData: 'No matching entries found',
         depth: 4
       },
       copyCode: {
-        buttonText : '📋 Copy',
+        buttonText : 'Copy',
         errorText  : 'Error',
-        successText: '✓ Copied'
+        successText: 'Copied'
       },
       pagination: {
-        previousText: 'Previous Section',
-        nextText: 'Next Section',
+        previousText: 'Previous',
+        nextText: 'Next',
         crossChapter: true
       },
       markdown: {

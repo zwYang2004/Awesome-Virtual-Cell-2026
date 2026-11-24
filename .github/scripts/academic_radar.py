@@ -1,33 +1,32 @@
 #!/usr/bin/env python3
 """
-Academic Radar: Automated arXiv & Frontier Paper Scanner
-Features:
-- Author & Elite Lab Recognition (Theis, Regev, Bo Wang, Jun Xia, Stan Z. Li, James Zou, Arc, Stanford, etc.)
-- Methodological Quality Scoring (Flow Matching, Schrödinger Bridges, Destructive Sampling, Foundation Models)
-- Optional LLM / Gemini API Integration for automated AI abstract triage
-- Appends to LATEST_RADAR.md with Tier-1 priority highlights
+Academic Radar: Automated arXiv & Frontier Paper Scanner with Archiving
+- Manages active buffer in LATEST_RADAR.md (current active batches)
+- Automatically archives historical batches into radar/archive/YYYY/YYYY-MM.md
+- Ranks candidate preprints by Elite Scholars and Methodological breakthroughs
 """
 
 import os
 import re
-import json
 import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
-RADAR_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "LATEST_RADAR.md")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+RADAR_FILE = os.path.join(BASE_DIR, "LATEST_RADAR.md")
+ARCHIVE_DIR = os.path.join(BASE_DIR, "radar", "archive")
 
-# Elite Scholars & Frontier Labs Whitelist
+# Elite Scholars & Frontier Labs Whitelist (Public academic pioneers)
 ELITE_AUTHORS = [
     "Fabian Theis", "F. Theis", "Aviv Regev", "A. Regev", "Bo Wang",
     "Jun Xia", "J. Xia", "Stan Z. Li", "S. Z. Li", "James Zou", "J. Zou",
     "Jianzhu Ma", "J. Ma", "Dana Pe'er", "Cole Trapnell", "Jure Leskovec",
     "Yaron Lipman", "Ricky T. Q. Chen", "Michael Bronstein", "Patrick Hsu",
-    "David Baker", "Alexander Tong", "Smita Krishnaswamy", "Mohammad Lotfollahi"
+    "David Baker", "Alexander Tong", "Smita Krishnaswamy", "Mohammad Lotfollahi",
+    "Charlotte Bunne", "Emma Lundberg", "Stephen Quake"
 ]
 
-# Core Breakthrough Keywords
 HIGH_IMPACT_KEYWORDS = [
     "flow matching", "schrodinger bridge", "schrödinger bridge",
     "destructive sampling", "cellular trajectory", "perturbation prediction",
@@ -47,14 +46,12 @@ def score_paper(paper):
     score = 0
     reasons = []
     
-    # Check authors
     for ea in ELITE_AUTHORS:
         if ea.lower() in paper["authors"].lower():
             score += 4
-            reasons.append(f"Elite Scholar Match: {ea}")
+            reasons.append(f"Leading Lab: {ea}")
             break
             
-    # Check Title & Abstract keywords
     text = (paper["title"] + " " + paper["summary"]).lower()
     for kw in HIGH_IMPACT_KEYWORDS:
         if kw in text:
@@ -64,7 +61,7 @@ def score_paper(paper):
     is_tier1 = score >= 3.0
     return score, is_tier1, reasons[:4]
 
-def fetch_arxiv_papers(max_results=25):
+def fetch_arxiv_papers(max_results=20):
     query = " OR ".join(SEARCH_QUERIES)
     params = {
         "search_query": query,
@@ -73,9 +70,7 @@ def fetch_arxiv_papers(max_results=25):
         "max_results": str(max_results)
     }
     url = f"https://export.arxiv.org/api/query?{urllib.parse.urlencode(params)}"
-    
-    headers = {"User-Agent": "AcademicRadarBot/2.0 (https://github.com/zwYang2004/Awesome-Virtual-Cell-2026)"}
-    req = urllib.request.Request(url, headers=headers)
+    req = urllib.request.Request(url, headers={"User-Agent": "AcademicRadarBot/2.1"})
     
     try:
         with urllib.request.urlopen(req, timeout=20) as response:
@@ -96,7 +91,6 @@ def fetch_arxiv_papers(max_results=25):
         
         authors = [a.find("atom:name", ns).text.strip() for a in entry.findall("atom:author", ns) if a.find("atom:name", ns) is not None]
         author_str = ", ".join(authors[:4]) + (" et al." if len(authors) > 4 else "")
-        
         categories = [c.attrib.get("term") for c in entry.findall("atom:category", ns) if c.attrib.get("term")]
         
         if title is not None and link is not None:
@@ -122,25 +116,64 @@ def fetch_arxiv_papers(max_results=25):
     return papers
 
 def load_existing_ids():
+    ids = set()
+    if os.path.exists(RADAR_FILE):
+        with open(RADAR_FILE, "r", encoding="utf-8") as f:
+            ids.update(re.findall(r"https?://arxiv\.org/abs/[\w\.\/]+", f.read()))
+    if os.path.exists(ARCHIVE_DIR):
+        for root, _, files in os.walk(ARCHIVE_DIR):
+            for file in files:
+                if file.endswith(".md"):
+                    with open(os.path.join(root, file), "r", encoding="utf-8") as f:
+                        ids.update(re.findall(r"https?://arxiv\.org/abs/[\w\.\/]+", f.read()))
+    return ids
+
+def archive_old_batches_if_needed():
     if not os.path.exists(RADAR_FILE):
-        return set()
+        return
     with open(RADAR_FILE, "r", encoding="utf-8") as f:
         content = f.read()
-    return set(re.findall(r"https?://arxiv\.org/abs/[\w\.\/]+", content))
+    
+    # Split by batch
+    batches = re.split(r"(?=### 🗓️ Radar Batch: )", content)
+    if len(batches) <= 4:
+        return # keep up to 3-4 latest batches in main buffer
+        
+    header = batches[0]
+    active_batches = batches[1:4]
+    older_batches = batches[4:]
+    
+    now = datetime.now(timezone.utc)
+    year = str(now.year)
+    month_str = now.strftime("%Y-%m")
+    
+    target_dir = os.path.join(ARCHIVE_DIR, year)
+    os.makedirs(target_dir, exist_ok=True)
+    archive_file = os.path.join(target_dir, f"{month_str}.md")
+    
+    archive_content = f"# Radar Archive: {month_str}\n\n" + "".join(older_batches)
+    with open(archive_file, "a", encoding="utf-8") as f:
+        f.write(archive_content)
+        
+    updated_main = header + "".join(active_batches)
+    with open(RADAR_FILE, "w", encoding="utf-8") as f:
+        f.write(updated_main)
+    print(f"[Archive] Moved {len(older_batches)} older batches to {archive_file}")
 
 def update_radar_file(new_papers):
     existing_ids = load_existing_ids()
     unseen = [p for p in new_papers if p["url"] not in existing_ids]
     
-    now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    now = datetime.now(timezone.utc)
+    now_str = now.strftime("%Y-%m-%d %H:%M UTC")
     
     if not os.path.exists(RADAR_FILE):
-        header = f"""# 📡 Frontier Academic Radar (Candidate Preprint Pool)
+        header = f"""# 📡 Frontier Academic Radar (Active Triage Buffer)
 
-> **Auto-curated by GitHub Actions | Managed by [Zhiwen Yang (杨志文)](https://zwyang2004.github.io/)**  
-> This registry serves as an intelligent automated triage buffer for newly published preprints from **arXiv & bioRxiv**.  
-> 🌟 **Tier-1 Highlight**: Automatically screened for top-tier research groups (Theis, Regev, Bo Wang, Jun Xia, James Zou, etc.) and core mathematical breakthroughs (Flow Matching, Schrödinger Bridges, Destructive Sampling).  
-> 💡 *Only papers meeting rigorous benchmark and methodological standards are promoted to the main [README.md](README.md).*
+> **Curated by GitHub Actions | Lead: [Zhiwen Yang](https://zwyang2004.github.io/)**  
+> Automated screening for preprints in Virtual Cells, Perturbation Modeling, and Flow Matching.  
+> 🌟 **Tier-1**: Flagged for leading groups (Theis, Regev, Bo Wang, Jun Xia, Stanford, etc.) and core mathematical leaps.  
+> 💡 Historical batches are archived monthly under [`radar/archive/`](radar/archive/).
 
 ---
 
@@ -150,26 +183,23 @@ def update_radar_file(new_papers):
             header = f.read()
             
     if not unseen:
-        print("[Info] No new unindexed papers discovered this run.")
+        print("[Info] No new preprints discovered.")
         return False
         
     tier1_papers = [p for p in unseen if p["is_tier1"]]
     tier2_papers = [p for p in unseen if not p["is_tier1"]]
     
-    print(f"[Info] Found {len(unseen)} new papers ({len(tier1_papers)} Tier-1 Priority). Appending to LATEST_RADAR.md...")
-    
     batch_markdown = f"\n### 🗓️ Radar Batch: {now_str}\n\n"
-    
     if tier1_papers:
-        batch_markdown += "#### 🌟 Tier-1 High-Priority Preprints (Elite Lab or Methodological Leap)\n\n"
+        batch_markdown += "#### 🌟 Tier-1 High-Priority Preprints (Leading Lab / Methodological Leap)\n\n"
         for p in tier1_papers:
             cats = " ".join([f"`{c}`" for c in p["categories"]])
             reasons_str = ", ".join([f"`{r}`" for r in p["reasons"]])
-            batch_markdown += f"- **[{p['title']}]({p['url']})** &nbsp; 🔥 *Score: {p['score']:.1f}*  \n"
+            batch_markdown += f"- **[{p['title']}]({p['url']})** &nbsp; *Score: {p['score']:.1f}*  \n"
             batch_markdown += f"  - **Authors**: {p['authors']} | **Date**: `{p['date']}` | **Tags**: {cats}  \n"
-            batch_markdown += f"  - **Why Top-Tier**: {reasons_str}  \n"
+            batch_markdown += f"  - **Highlight**: {reasons_str}  \n"
             batch_markdown += f"  - **Abstract**: *{p['summary']}*  \n"
-            batch_markdown += f"  - [ ] **Triage Status**: `Promote to Main README`  \n\n"
+            batch_markdown += f"  - [ ] **Triage**: `Promote to Main Registry`  \n\n"
             
     if tier2_papers:
         batch_markdown += "#### 📌 Tier-2 Monitoring Preprints (General Candidate Stream)\n\n"
@@ -178,28 +208,20 @@ def update_radar_file(new_papers):
             batch_markdown += f"- **[{p['title']}]({p['url']})**  \n"
             batch_markdown += f"  - **Authors**: {p['authors']} | **Date**: `{p['date']}` | **Tags**: {cats}  \n"
             batch_markdown += f"  - **Abstract**: *{p['summary']}*  \n"
-            batch_markdown += f"  - [ ] **Review Status**: `Pending Review`  \n\n"
+            batch_markdown += f"  - [ ] **Status**: `Pending Review`  \n\n"
         
     if "# 📡 Frontier Academic Radar" in header:
         parts = header.split("---\n\n", 1)
-        if len(parts) == 2:
-            updated_content = parts[0] + "---\n\n" + batch_markdown + parts[1]
-        else:
-            updated_content = header + "\n" + batch_markdown
+        updated_content = parts[0] + "---\n\n" + batch_markdown + (parts[1] if len(parts) > 1 else "")
     else:
         updated_content = header + "\n" + batch_markdown
         
     with open(RADAR_FILE, "w", encoding="utf-8") as f:
         f.write(updated_content)
         
+    archive_old_batches_if_needed()
     return True
 
 if __name__ == "__main__":
-    print("[Radar] Running intelligent academic radar with Elite Scholar screening...")
-    papers = fetch_arxiv_papers(max_results=25)
-    print(f"[Radar] Fetched {len(papers)} candidate preprints from arXiv.")
-    has_changes = update_radar_file(papers)
-    if has_changes:
-        print("[Radar] Successfully updated LATEST_RADAR.md with tiered triage.")
-    else:
-        print("[Radar] LATEST_RADAR.md is already up to date.")
+    papers = fetch_arxiv_papers(max_results=20)
+    update_radar_file(papers)
