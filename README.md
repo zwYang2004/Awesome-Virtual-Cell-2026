@@ -82,6 +82,52 @@ flowchart TB
 
 ---
 
+## ⏳ Evolution Timeline: Co-Development of Datasets & AI Paradigms (2016 – 2026)
+
+The virtual cell and perturbation biology field has evolved through **four distinct historical epochs**, driven by the synchronized scaling of **experimental screening throughput** and **generative mathematical mechanics**:
+
+```mermaid
+flowchart LR
+    subgraph E1["🌱 Phase 1 (2016–2019): Discrete Snapshots"]
+        direction TB
+        D1["📊 Data: Perturb-seq & Norman '19 (100k cells, Pairs)"]
+        M1["🧠 Model: Waddington-OT & scGen/CPA (Latent VAE)"]
+        D1 --> M1
+    end
+
+    subgraph E2["⚡ Phase 2 (2022–2023): Genome Scale & Neural OT"]
+        direction TB
+        D2["📊 Data: Replogle GWPS '22 (2.5M cells) & Sci-Plex 3"]
+        M2["🧠 Model: CellOT (Neural OT) & Flow Matching (Lipman)"]
+        D2 --> M2
+    end
+
+    subgraph E3["🌊 Phase 3 (2024–2025): Continuous Flows & Audits"]
+        direction TB
+        D3["📊 Data: SpatialCorpus-110M & IS110 Bridge RNA"]
+        M3["🧠 Model: CellFlow (Continuous Flow) & Metric Debate"]
+        D3 --> M3
+    end
+
+    subgraph E4["🌐 Phase 4 (2026+): Virtual Cells & World Models"]
+        direction TB
+        D4["📊 Data: Tahoe-100M & scBaseCount (100M–502M cells)"]
+        M4["🧠 Model: CytoBridge (Mean-Field SB) & UniPert (Cell)"]
+        D4 --> M4
+    end
+
+    E1 ==> E2 ==> E3 ==> E4
+```
+
+| Era | Key Dataset & Assay Milestones | AI & Computational Paradigm Milestones | Core Paradigm Shift & Theoretical Leap |
+| :---: | :--- | :--- | :--- |
+| **2016–2019**<br>*Discrete Snapshots* | **Perturb-seq** (Adamson / Dixit '16, 100k cells)<br>**Norman 2019** (284 CRISPRa pairs) | **Waddington-OT** (Schiebinger '19, Static OT)<br>**scGen / CPA** (Lotfollahi '19–'21, Latent VAEs) | From bulk screens to single-cell resolution; latent vector addition in autoencoders models cell shifts. |
+| **2022–2023**<br>*Genome-Scale & Neural OT* | **Replogle 2022** (Genome-Wide CRISPRi, 2.5M cells)<br>**Sci-Plex 3** (188 compounds, 650k cells) | **CellOT** (Bunne / Theis, *ICML '23 Oral*)<br>**Flow Matching** (Lipman et al., *ICLR '23 Oral*) | Scaled to whole genomes; Neural Optimal Transport & simulation-free straight-line ODE flows replace discrete matching. |
+| **2024–2025**<br>*Continuous Flows & Reality Checks* | **SpatialCorpus-110M** (73 spatial datasets)<br>**IS110 Bridge RNA** (Arc / *Nature '24*) | **CellFlow** (Theis, *Nat. Methods '25*)<br>**Linear vs DL Debate** (*Nat. Methods '25*) | Shift from autoencoders to continuous probability flow matching; critical discovery of variance miscalibration in benchmarks. |
+| **2026+**<br>*Virtual Cells & World Models* | **Tahoe-100M** (*Cell*, 100M drug cells)<br>**scBaseCount** (*Cell*, 502M curated cells)<br>**Arc Virtual Cell Challenge 2026** | **CytoBridge** (Unbalanced Mean-Field SB)<br>**UniPert-G2CP** (*Cell*, Genetic-to-Chemical Transfer)<br>**Evo-PIN** (Arc, 5.14M ncRNA clusters)<br>**DiscoveryAgent** (Stanford, Audit Agents) | **The Virtual Cell Era**: Multi-agent AI scientists, mean-field physics integrating cell-cell interactions, and unified cause-effect spaces. |
+
+---
+
 ## 📂 Taxonomy & Repository Structure
 
 All works are organized into **5 core research pillars**, with papers inside each section sorted **newest-first (2026 $\to$ 2023)**:
@@ -98,6 +144,7 @@ All works are organized into **5 core research pillars**, with papers inside eac
 
 ## 📑 Table of Contents
 
+- [⏳ Evolution Timeline: Datasets vs. AI Paradigms (2016 – 2026)](#-evolution-timeline-co-development-of-datasets--ai-paradigms-2016--2026)
 - [1. Perturbation & Cellular Dynamics (`PT`)](#1-perturbation--cellular-dynamics-pt)
   - [1.1 Optimal Transport, Flow Matching & Bridges (Sorted by Year)](#11-optimal-transport-flow-matching--bridges-sorted-by-year)
   - [1.2 Large-Scale & Causal Perturbation Prediction (Sorted by Year)](#12-large-scale--causal-perturbation-prediction-sorted-by-year)
