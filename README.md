@@ -312,6 +312,7 @@ All works are organized into **5 core research pillars**, with papers inside eac
 
 | Year | Method / Title | Venue | Benchmark / Key Dataset | Core Idea & Mechanism | Link / DOI |
 | :---: | :--- | :--- | :--- | :--- | :--- |
+| **2026** | **Toward autonomous science with agentic AI** | *Cell* (Perspective) | Multi-agent autonomous discovery pipelines (Robin, Biomni) | Authoritative roadmap for agentic AI co-scientists, lab-in-the-loop validation & translational governance | [DOI](https://doi.org/10.1016/j.cell.2026.08.052) |
 | **2026** | **OpenScientist**: Open agentic AI co-scientist for clinical & biomedical discovery | *Nat. Med.* | SEABIRD AD plasma/PET, plasma proteomics survival, NFT single-soma RNA-seq, myeloma | Open-source (Apache 2.0), auditable (KSDS) & air-gapped autonomous AI co-scientist with modular Agent Skills | [DOI](https://doi.org/10.1038/s41591-026-04808-6) |
 | **2026** | **RhoAgent & RDiff**: Programmable functional RNA design | *Nat. Biotechnol.* | PDB RNA, Ribocentre 3D, wet-lab cleavage | LLM virtual scientist + 2-stage cascaded diffusion (RDiff) for wet-lab validated functional RNA design | [DOI](https://doi.org/10.1038/s41587-026-03362-3) |
 | **2026** | **DiscoveryAgent**: Scientist-centric Agentic AI | arXiv | ProteinGym (106 baselines), CD4+ T-cell genomics | Scientist-steered agentic search + autonomous audit agents catching errors & discovering relay genes | [arXiv:2611.21950](https://arxiv.org/abs/2611.21950) |
