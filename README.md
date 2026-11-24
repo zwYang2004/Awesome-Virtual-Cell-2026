@@ -107,6 +107,19 @@ All works are organized into 5 core research pillars:
 | **SC-OTGM**: Single-Cell Perturbation Modeling on the Manifold of Gaussian Mixtures | *ICLR Spotlight* (MLGenX) | - | Fast optimal mass transport solved on Gaussian mixture manifolds | [OpenReview](https://openreview.net/) |
 | **SCALE**: Scalable Conditional Atlas-Level Endpoint Transport | bioRxiv 2026 | - | Scalable conditional endpoint transport for atlas-level virtual cell perturbation | [DOI](https://doi.org/10.64898/2026.03.17.712536) |
 | **PerturbDiff**: Functional Diffusion for Single-Cell Perturbation Modeling | *NeurIPS* / arXiv 2026 | - | Functional diffusion in Hilbert space (RKHS) capturing transcriptional escapers | [arXiv:2602.19685](https://arxiv.org/abs/2602.19685) |
+| **DiffusionOT**: Inferring single-cell trajectory via regularized optimal transport | *Science Advances* | Liu et al. | Combines RUOT with SDEs & Neural ODEs to reconstruct hematopoietic trajectories | [GitHub](https://github.com/liujuntan/DiffusionOT) |
+| **Flow Matching for Generative Modeling** | *ICLR 2023 Oral* | Lipman, Chen, Ben-Hamu | Foundational simulation-free continuous normalizing flows with OT interpolation | [OpenReview](https://openreview.net/forum?id=PBF7j27uZJ) |
+| **scDFM**: Distributional Flow Matching for Single-Cell Perturbation Prediction | *ICLR 2024/2025* | - | Conditional flow matching + MMD for full-distribution perturbation modeling | OpenReview |
+| **SP-FM**: Shortest-Path Flow Matching for Single-Cell Perturbation | *ICLR 2025* | - | Conditional shortest-path base distributions for OOD perturbation generalization | OpenReview |
+| **cellFlow**: Flow-based modeling of single-cell counts | *ICLR 2024* | Palma, **Theis** | Continuous flow modeling directly in discrete Negative Binomial count space | OpenReview |
+| **Discrete Flow Matching (DFM) for Regulatory DNA Design** | *ICLR 2025* | - | Discrete flow matching on nucleotide sequences for promoter/enhancer design | OpenReview |
+| **The $\varepsilon$-Bridge**: Dimension-Dependent Bridge-Noise Selection | *ICLR 2025 Spotlight* | - | Analyzes when Brownian bridge noise outperforms deterministic flow matching | OpenReview |
+| **$S^2$DBM**: Series-to-Series Diffusion Bridge Model | *ICLR 2024* | - | Brownian bridge connecting historical & future states for time-series | OpenReview |
+| **Fractional Brownian Bridges for Aligned Protein Conformational Data** | *ICLR Workshop* | - | Fractional Brownian motion bridges for protein conformational transitions | OpenReview |
+| **BranchSBM**: Branched Schrödinger Bridge Matching | *ICLR 2025* | - | Extends Schrödinger bridge to tree-like bifurcations (cell fate decision trees) | [OpenReview](https://openreview.net/) |
+| **Light Schrödinger Bridge** | *ICLR 2024 Spotlight* | Korotin, Burnaev | Simulation-free lightweight SB solver via sum-exp quadratic potentials | OpenReview |
+| **Benchmark for Discrete Schrödinger Bridges & Entropic OT** | *ICLR 2026* | - | Evaluates discrete Schrödinger bridges (`DLightSB`) on discrete sequence/graph spaces | OpenReview |
+| **Deep Generalized Schrödinger Bridge** | *ICLR 2024* | - | Nonlinear mean-field Schrödinger bridges (theoretical precursor to CytoBridge) | OpenReview |
 
 ### 1.2 Large-Scale & Causal Perturbation Prediction
 
