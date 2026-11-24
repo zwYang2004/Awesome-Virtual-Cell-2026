@@ -201,6 +201,7 @@ All works are organized into **5 core research pillars**, with papers inside eac
 
 | Year | Resource / Benchmark | Venue | Core Contribution | Link / DOI |
 | :---: | :--- | :--- | :--- | :--- |
+| **2026** | **Deep learning perturbation models can outperform baselines on calibrated metrics** | *Nat. Biotechnol.* | Introduces DRF calibration; refutes linear-only claims (Miller, **Bo Wang**, Camillo) | [DOI](https://doi.org/10.1038/s41587-026-03307-w) |
 | **2026** | **Virtual Cell Challenge 2026**: Benchmarking zero-shot generalization | *Cell* | Arc Institute commentary on 2026 challenge & cross-context generalization | *Cell* 2026 |
 | **2026** | **A systematic comparison of single-cell perturbation response prediction** | *Sci. Adv.* 12 | Comprehensive comparison across genetic & chemical perturbation tasks | [DOI](https://doi.org/10.1126/sciadv.aed3414) |
 | **2026** | **Benchmarking algorithms for generalizable single-cell perturbation prediction** | *Nat. Methods* 23 | Systematic evaluation of generalizable perturbation prediction algorithms | [DOI](https://doi.org/10.1038/s41592-025-02980-0) |
@@ -209,6 +210,7 @@ All works are organized into **5 core research pillars**, with papers inside eac
 | **2026** | **scBaseCount** | *Cell* 189 | 502-million-cell AI agent-curated, standardized scRNA-seq repository | *Cell* 189 |
 | **2026** | **Cross-species single-cell kidney epigenome atlas** | *Nat. Aging* | Cross-species kidney epigenomic aging atlas | *Nature Aging* |
 | **2025** | **PerturBench**: Benchmarking ML Models for Cellular Perturbation Analysis | *NeurIPS D&B* | Standardized benchmark for OOD generalization & posterior collapse | [OpenProblems](https://openproblems.bio/) |
+| **2025** | **Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear baselines** | *Nat. Methods* 22 | Landmark critical benchmark sparking the linear-vs-DL debate (Ahlmann-Eltze, Huber, Anders) | [DOI](https://doi.org/10.1038/s41592-025-02772-6) |
 
 ---
 
