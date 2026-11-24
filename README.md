@@ -153,6 +153,7 @@ All works are organized into **5 core research pillars**, with papers inside eac
 | **2026** | **HyperST**: Hierarchical Hyperbolic Learning for Spatial Transcriptomics | *CVPR* | Zhang et al. | Hyperbolic hierarchical image-gene alignment for spatial transcriptomics | CVPR 2026 |
 | **2026** | **scKITE**: Towards a knowledge-enhanced single-cell foundation model | arXiv | Zhang et al. | Knowledge-enhanced scFM with regulon supervision | arXiv |
 | **2025** | **Nicheformer**: A foundation model for single-cell and spatial omics | *Nat. Methods* | Tejada-Lapuerta, **Theis** | Trained on SpatialCorpus-110M; projects dissociated scRNA-seq to spatial niches | [DOI](https://doi.org/10.1038/s41592-025-02814-z) |
+| **2024** | **Reference Mapping for Automated Single-Cell Data Analysis** | *Cell* 187 | **Lotfollahi, Theis, Satija** | Foundational framework for rapid automated cell typing, projection & multi-atlas integration | [DOI](https://doi.org/10.1016/j.cell.2024.03.015) |
 
 ### 2.2 Genomic & RNA Language Models (Sorted by Year)
 
@@ -205,7 +206,7 @@ All works are organized into **5 core research pillars**, with papers inside eac
 | **2026** | **Virtual Cell Challenge 2026**: Benchmarking zero-shot generalization | *Cell* | Arc Institute commentary on 2026 challenge & cross-context generalization | *Cell* 2026 |
 | **2026** | **A systematic comparison of single-cell perturbation response prediction** | *Sci. Adv.* 12 | Comprehensive comparison across genetic & chemical perturbation tasks | [DOI](https://doi.org/10.1126/sciadv.aed3414) |
 | **2026** | **Benchmarking algorithms for generalizable single-cell perturbation prediction** | *Nat. Methods* 23 | Systematic evaluation of generalizable perturbation prediction algorithms | [DOI](https://doi.org/10.1038/s41592-025-02980-0) |
-| **2026** | **Genome Biology 2026 Perturbation Benchmark** | *Genome Biol.* | Systematic perturbation evaluation (`13059_2026_Article_4104`) | *Genome Biology* |
+| **2026** | **scArchon**: A scalable benchmarking framework for assessing single-cell perturbation models | *Genome Biol.* 27 | Standardized multi-sample evaluation across 9 chemical/bacterial perturbation tools (Radig et al.) | [DOI](https://doi.org/10.1186/s13059-026-04104-x) |
 | **2026** | **Tahoe-100M** | *Cell* 189 | 100-million-cell drug-induced single-cell phenotype atlas | *Cell* 189 |
 | **2026** | **scBaseCount** | *Cell* 189 | 502-million-cell AI agent-curated, standardized scRNA-seq repository | *Cell* 189 |
 | **2026** | **Cross-species single-cell kidney epigenome atlas** | *Nat. Aging* | Cross-species kidney epigenomic aging atlas | *Nature Aging* |
